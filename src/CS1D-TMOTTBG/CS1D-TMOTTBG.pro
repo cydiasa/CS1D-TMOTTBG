@@ -21,4 +21,5 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 OTHER_FILES += \
-    inputFile.txt
+    inputFile.txt \
+    inputFileCode.txt

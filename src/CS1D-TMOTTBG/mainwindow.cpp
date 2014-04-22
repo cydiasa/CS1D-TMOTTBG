@@ -16,11 +16,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     if(!database.open())
     {
-        ui->label_status->setText("Failed to connect to the Databse...!");
+        ui->label_status->setText("Failed to connect to the Databse!");
     }
     else
     {
-        ui->label_status->setText("Connected to the Database...!");
+        ui->label_status->setText("Connected to the Database!");
     }
 }
 
