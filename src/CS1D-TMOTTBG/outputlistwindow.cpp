@@ -26,16 +26,16 @@ OutputListWindow::~OutputListWindow()
 
 void OutputListWindow::on_pushButton_clicked()
 {
-    QDeclarativeView view;
-    QStringList dataList;
-        dataList.append("Item 1", "MEOW");
-        dataList.append("Item 2", "MEOW");
-        dataList.append("Item 3", "MEOW");
-        dataList.append("Item 4", "MEOW");
-    QDeclarativeContext* context = view.rootContext();
-        context->setContextProperty("myModel",QVariant::fromValue(dataList));
+//    QDeclarativeView view;
+//    QStringList dataList;
+//        dataList.append("Item 1", "MEOW");
+//        dataList.append("Item 2", "MEOW");
+//        dataList.append("Item 3", "MEOW");
+//        dataList.append("Item 4", "MEOW");
+//    QDeclarativeContext* context = view.rootContext();
+//        context->setContextProperty("myModel",QVariant::fromValue(dataList));
 
-    ui->listWidget->addItem("asd");
-    view.setSource(QUrl::fromLocalFile("../CS1D-TMOTTBG/outputLisQML.qml"));
-    view.show();
+//    ui->listWidget->addItem("asd");
+//    view.setSource(QUrl::fromLocalFile("../CS1D-TMOTTBG/outputLisQML.qml"));
+//    view.show();
 }
