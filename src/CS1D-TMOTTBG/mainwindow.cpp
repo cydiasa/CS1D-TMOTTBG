@@ -47,7 +47,7 @@ void MainWindow::on_pushButton_login_clicked()
     }
     else
     {
-        if(qry.exec("Select * from users where username = '" +username +"' and password = MD5('" + password + "')"))
+        if(qry.exec("SELECT * FROM users WHERE username = '" + username +"' and password = MD5('" + password + "')"))
         {
             //WHILE LOOP - This while loop is designed to go through
             //             the sql database to try and find the correct
