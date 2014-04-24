@@ -1,0 +1,13 @@
+INPUT(
+./release/main.o
+./release/mainwindow.o
+./release/createuserwindow.o
+./release/dashboardwindow.o
+./release/outputlistwindow.o
+./release/outputlistdelegate.o
+./release/moc_mainwindow.o
+./release/moc_createuserwindow.o
+./release/moc_dashboardwindow.o
+./release/moc_outputlistwindow.o
+./release/moc_outputlistdelegate.o
+);

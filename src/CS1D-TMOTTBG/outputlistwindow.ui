@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OutputListWindow</class>
+ <widget class="QDialog" name="OutputListWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>933</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>8</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>111</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Team Or Stadium Name</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>8</y>
+     <width>133</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>685</x>
+     <y>10</y>
+     <width>48</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Feild Type</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>491</x>
+     <y>10</y>
+     <width>35</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>League</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="searchTypeComboBox">
+   <property name="geometry">
+    <rect>
+     <x>339</x>
+     <y>8</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Stadiums &amp; Team Names</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Stadiums Names Only</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Team Names Only</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>273</x>
+     <y>10</y>
+     <width>59</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Serach Type</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="leagueComboBox">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>8</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Major League Baseball</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>American League</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>National League</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="feildTypeComboBox">
+   <property name="geometry">
+    <rect>
+     <x>739</x>
+     <y>8</y>
+     <width>69</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Any</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Grass</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Astro Turf</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>911</width>
+     <height>591</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

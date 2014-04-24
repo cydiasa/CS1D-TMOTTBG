@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql declarative
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,19 +15,23 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     createuserwindow.cpp \
-    dashboardwindow.cpp
+    dashboardwindow.cpp \
+    outputlistwindow.cpp
 
 HEADERS  += mainwindow.h \
     header.h \
     createuserwindow.h \
-    dashboardwindow.h
+    dashboardwindow.h \
+    outputlistwindow.h
 
 FORMS    += mainwindow.ui \
     createuserwindow.ui \
-    dashboardwindow.ui
+    dashboardwindow.ui \
+    outputlistwindow.ui
 
 OTHER_FILES += \
     inputFileStadiums.txt \
     inputFileCellProvidor.txt \
     inputFileStadiumCode.txt \
-    inputFileCellProvidorCode.txt
+    inputFileCellProvidorCode.txt \
+    outputLisQML.qml

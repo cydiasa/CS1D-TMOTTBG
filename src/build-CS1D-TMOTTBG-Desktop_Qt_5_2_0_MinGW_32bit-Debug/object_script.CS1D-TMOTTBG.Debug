@@ -1,0 +1,13 @@
+INPUT(
+./debug/main.o
+./debug/mainwindow.o
+./debug/createuserwindow.o
+./debug/dashboardwindow.o
+./debug/outputlistwindow.o
+./debug/outputlistdelegate.o
+./debug/moc_mainwindow.o
+./debug/moc_createuserwindow.o
+./debug/moc_dashboardwindow.o
+./debug/moc_outputlistwindow.o
+./debug/moc_outputlistdelegate.o
+);

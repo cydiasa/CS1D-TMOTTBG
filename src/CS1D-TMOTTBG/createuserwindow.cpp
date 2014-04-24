@@ -21,8 +21,6 @@ CreateUserWindow::CreateUserWindow(QWidget *parent) :
         countryComboBox->addItem(query.value(0).toString());
     }
 
-
-
     // Cell Providor List
     query.exec("SELECT name FROM cellProvider ORDER BY name ASC");
     while(query.next())
