@@ -1,0 +1,91 @@
+#include "mainwindow.h"
+#include <QApplication>
+#include "header.h"
+#include "QtSql"
+#include "QtDebug"
+#include "QFile"
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+
+//    MainWindow w;
+//    w.show();
+
+
+
+    QFile data("C:\\Users\\Cydia\\Documents\\GitHub\\CS1D-TMOTTBG\\src\\CS1D-TMOTTBG\\inputFileCellProvidor.txt");
+
+    QSqlDatabase database = QSqlDatabase::addDatabase("QMYSQL3");
+    database.setConnectOptions();
+    database.setHostName("localhost");
+    database.setDatabaseName("cs1d");
+    database.setUserName("root");
+    database.setPassword("");
+
+    if(!database.open())
+    {
+       qDebug() << ("Failed to connect to the Databse...!");
+    }
+    else
+    {
+        qDebug() << ("Connected to the Database...!");
+    }
+
+    QString line;
+    QString stadiumTeamName;
+    QString stadiumName;
+    QString address;
+    QString phoneNumber;
+    QString dateOpened;
+    QString population;
+    QString americanLeague;
+
+
+    if (!data.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+            return 1;
+    }
+    else
+    {
+            while (!data.atEnd()) {
+                QByteArray line = data.readLine().trimmed();
+                QByteArray line2 = data.readLine().trimmed();
+                QSqlQuery query;
+                query.prepare("INSERT INTO cellProvider (name, email) VALUES ( :name, :email)");
+                query.bindValue(":name",line);
+                query.bindValue(":email",line2);
+                query.exec();
+            }
+    }
+
+//        do
+//        {
+////            QSqlQuery query;
+////            query.prepare("INSERT INTO stadiums (stadiumTeamName,stadiumName,address,phoneNumber, dateOpened, population, americanLeague) VALUES ( :stadiumTeamName, :stadiumName, :address, :phoneNumber, :dateOpened, :population, :americanLeague)");
+////            query.bindValue(":stadiumTeamName",stadiumTeamName);
+////            query.bindValue(":stadiumName",stadiumName);
+////            query.bindValue(":address",address);
+////            query.bindValue(":phoneNumber",phoneNumber);
+////            query.bindValue(":dateOpened",dateOpened);
+////            query.bindValue(":population",population);
+////            query.bindValue(":americanLeague",americanLeague);
+////            query.exec();
+
+//            stadiumTeamName = in.readLine();
+//            stadiumName     = in.readLine();
+//            qDebug() << stadiumName << stadiumTeamName ;
+//        } while (!line.isNull());
+
+//    QSqlQuery query;
+//    query.prepare("INSERT INTO stadiums (stadiumTeamName,stadiumName,address,phoneNumber, dateOpened, population, americanLeague)" +
+//                  "VALUES ( :stadiumTeamName, :stadiumName, :address, :phoneNumber, :dateOpened, :population, :americanLeague)");
+//    query.bindValue(":symbol",symbol);
+//    query.bindValue(":price",price);
+//    query.bindValue(":size",size);
+//    query.bindValue(":timestamp",timestamp);
+//    query.exec();
+
+
+    return a.exec();
+}

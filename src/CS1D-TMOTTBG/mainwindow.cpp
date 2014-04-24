@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dashboardwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -7,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Create Connection to MYSQL
     database = QSqlDatabase::addDatabase("QMYSQL3");
     database.setConnectOptions();
     database.setHostName("localhost");
@@ -14,10 +16,12 @@ MainWindow::MainWindow(QWidget *parent) :
     database.setUserName("root");
     database.setPassword("");
 
+    // Check to see if were connected to the database
     if(!database.open())
     {
         ui->label_status->setText("Failed to connect to the Databse!");
     }
+    // If connected let the user name
     else
     {
         ui->label_status->setText("Connected to the Database!");
@@ -43,34 +47,22 @@ void MainWindow::on_pushButton_login_clicked()
 
     if(!database.isOpen())
     {
-        qDebug()<<"Failed to open the database!";
+        qDebug()<< "Failed to open the database!";
     }
     else
     {
         if(qry.exec("SELECT * FROM users WHERE username = '" + username +"' and password = MD5('" + password + "')"))
         {
-            //WHILE LOOP - This while loop is designed to go through
-            //             the sql database to try and find the correct
-            //             matching ID and password...and increment the counter
-            //             for basic login correction!
-            while(qry.next())
-            {
-                counter++;
-            }
-
-            //IF-THEN-ELSE STATEMENT - This statement is designed to check
-            //                         for the correct login ID and password.
-            //                         Depending on the condition, a notification
-            //                         will be given out under the status msg!
-            if(counter == 1)
+            if(qry.next())
             {
                 ui->label_status->setText("Username and password is correct.");
+
+                // Switch to dashboard
+                DashboardWindow *dashboardWindow;
+                dashboardWindow = new DashboardWindow();
+                dashboardWindow->show();
             }
-            else if(counter > 1)
-            {
-                ui->label_status->setText("Duplicate username and password.");
-            }
-            else if(counter < 1)
+            else
             {
                 ui->label_status->setText("Username and password is not correct.");
             }
@@ -78,4 +70,9 @@ void MainWindow::on_pushButton_login_clicked()
     }
 
 
+}
+
+void MainWindow::on_pushButton_login_pressed()
+{
+    this->on_pushButton_login_clicked();
 }

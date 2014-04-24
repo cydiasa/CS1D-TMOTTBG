@@ -13,13 +13,21 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    createuserwindow.cpp \
+    dashboardwindow.cpp
 
 HEADERS  += mainwindow.h \
-    header.h
+    header.h \
+    createuserwindow.h \
+    dashboardwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    createuserwindow.ui \
+    dashboardwindow.ui
 
 OTHER_FILES += \
-    inputFile.txt \
-    inputFileCode.txt
+    inputFileStadiums.txt \
+    inputFileCellProvidor.txt \
+    inputFileStadiumCode.txt \
+    inputFileCellProvidorCode.txt

@@ -10,10 +10,120 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2014-04-21 21:57:52
+Date: 2014-04-23 20:01:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `cellprovider`
+-- ----------------------------
+DROP TABLE IF EXISTS `cellprovider`;
+CREATE TABLE `cellprovider` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text,
+  `email` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of cellprovider
+-- ----------------------------
+INSERT INTO `cellprovider` VALUES ('1', '3 River Wireless', '@sms.3rivers.net');
+INSERT INTO `cellprovider` VALUES ('2', 'ACS Wireless', '@paging.acswireless.com');
+INSERT INTO `cellprovider` VALUES ('3', 'Alltel', '@message.alltel.com');
+INSERT INTO `cellprovider` VALUES ('4', 'AT&T', '@txt.att.net');
+INSERT INTO `cellprovider` VALUES ('5', 'Bell Canada', '@txt.bellmobility.ca');
+INSERT INTO `cellprovider` VALUES ('6', 'Bell Canada', '@bellmobility.ca');
+INSERT INTO `cellprovider` VALUES ('7', 'Bell Mobility (Canada)', '@txt.bell.ca');
+INSERT INTO `cellprovider` VALUES ('8', 'Bell Mobility', '@txt.bellmobility.ca');
+INSERT INTO `cellprovider` VALUES ('9', 'Blue Sky Frog', '@blueskyfrog.com');
+INSERT INTO `cellprovider` VALUES ('10', 'Bluegrass Cellular', '@sms.bluecell.com');
+INSERT INTO `cellprovider` VALUES ('11', 'Boost Mobile', '@myboostmobile.com');
+INSERT INTO `cellprovider` VALUES ('12', 'BPL Mobile', '@bplmobile.com');
+INSERT INTO `cellprovider` VALUES ('13', 'Carolina West Wireless', '10digit10digitnumber@cwwsms.com');
+INSERT INTO `cellprovider` VALUES ('14', 'Cellular One', '@mobile.celloneusa.com');
+INSERT INTO `cellprovider` VALUES ('15', 'Cellular South', '@csouth1.com');
+INSERT INTO `cellprovider` VALUES ('16', 'Centennial Wireless', '@cwemail.com');
+INSERT INTO `cellprovider` VALUES ('17', 'CenturyTel', '@messaging.centurytel.net');
+INSERT INTO `cellprovider` VALUES ('18', 'Cingular (Now AT&T)', '@txt.att.net');
+INSERT INTO `cellprovider` VALUES ('19', 'Clearnet', '@msg.clearnet.com');
+INSERT INTO `cellprovider` VALUES ('20', 'Comcast', '@comcastpcs.textmsg.com');
+INSERT INTO `cellprovider` VALUES ('21', 'Corr Wireless Communications', '@corrwireless.net');
+INSERT INTO `cellprovider` VALUES ('22', 'Dobson', '@mobile.dobson.net');
+INSERT INTO `cellprovider` VALUES ('23', 'Edge Wireless', '@sms.edgewireless.com');
+INSERT INTO `cellprovider` VALUES ('24', 'Fido', '@fido.ca');
+INSERT INTO `cellprovider` VALUES ('25', 'Golden Telecom', '@sms.goldentele.com');
+INSERT INTO `cellprovider` VALUES ('26', 'Helio', '@messaging.sprintpcs.com');
+INSERT INTO `cellprovider` VALUES ('27', 'Houston Cellular', '@text.houstoncellular.net');
+INSERT INTO `cellprovider` VALUES ('28', 'Idea Cellular', '@ideacellular.net');
+INSERT INTO `cellprovider` VALUES ('29', 'Illinois Valley Cellular', '@ivctext.com');
+INSERT INTO `cellprovider` VALUES ('30', 'Inland Cellular Telephone', '@inlandlink.com');
+INSERT INTO `cellprovider` VALUES ('31', 'MCI', '@pagemci.com');
+INSERT INTO `cellprovider` VALUES ('32', 'Metrocall', '10digitpagernumber@page.metrocall.com');
+INSERT INTO `cellprovider` VALUES ('33', 'Metrocall 2-way', '10digitpagernumber@my2way.com');
+INSERT INTO `cellprovider` VALUES ('34', 'Metro PCS', '@mymetropcs.com');
+INSERT INTO `cellprovider` VALUES ('35', 'Microcell', '@fido.ca');
+INSERT INTO `cellprovider` VALUES ('36', 'Midwest Wireless', '@clearlydigital.com');
+INSERT INTO `cellprovider` VALUES ('37', 'Mobilcomm', '@mobilecomm.net');
+INSERT INTO `cellprovider` VALUES ('38', 'MTS', '@text.mtsmobility.com');
+INSERT INTO `cellprovider` VALUES ('39', 'Nextel', '@messaging.nextel.com');
+INSERT INTO `cellprovider` VALUES ('40', 'OnlineBeep', '@onlinebeep.net');
+INSERT INTO `cellprovider` VALUES ('41', 'PCS One', '@pcsone.net');
+INSERT INTO `cellprovider` VALUES ('42', 'President\'s Choice', '@txt.bell.ca');
+INSERT INTO `cellprovider` VALUES ('43', 'Public Service Cellular', '@sms.pscel.com');
+INSERT INTO `cellprovider` VALUES ('44', 'Qwest', '@qwestmp.com');
+INSERT INTO `cellprovider` VALUES ('45', 'Rogers AT&T Wireless', '@pcs.rogers.com');
+INSERT INTO `cellprovider` VALUES ('46', 'Rogers Canada', '@pcs.rogers.com');
+INSERT INTO `cellprovider` VALUES ('47', 'Satellink', '10digitpagernumber.pageme@satellink.net');
+INSERT INTO `cellprovider` VALUES ('48', 'Southwestern Bell', '@email.swbw.com');
+INSERT INTO `cellprovider` VALUES ('49', 'Sprint', '@messaging.sprintpcs.com');
+INSERT INTO `cellprovider` VALUES ('50', 'Sumcom', '@tms.suncom.com');
+INSERT INTO `cellprovider` VALUES ('51', 'Surewest Communicaitons', '@mobile.surewest.com');
+INSERT INTO `cellprovider` VALUES ('52', 'T-Mobile', '@tmomail.net');
+INSERT INTO `cellprovider` VALUES ('53', 'Telus', '@msg.telus.com');
+INSERT INTO `cellprovider` VALUES ('54', 'Tracfone', '@txt.att.net');
+INSERT INTO `cellprovider` VALUES ('55', 'Triton', '@tms.suncom.com');
+INSERT INTO `cellprovider` VALUES ('56', 'Unicel', '@utext.com');
+INSERT INTO `cellprovider` VALUES ('57', 'US Cellular', '@email.uscc.net');
+INSERT INTO `cellprovider` VALUES ('58', 'Solo Mobile', '@txt.bell.ca');
+INSERT INTO `cellprovider` VALUES ('59', 'Sprint', '@messaging.sprintpcs.com');
+INSERT INTO `cellprovider` VALUES ('60', 'Sumcom', '@tms.suncom.com');
+INSERT INTO `cellprovider` VALUES ('61', 'Surewest Communicaitons', '@mobile.surewest.com');
+INSERT INTO `cellprovider` VALUES ('62', 'T-Mobile', '@tmomail.net');
+INSERT INTO `cellprovider` VALUES ('63', 'Telus', '@msg.telus.com');
+INSERT INTO `cellprovider` VALUES ('64', 'Triton', '@tms.suncom.com');
+INSERT INTO `cellprovider` VALUES ('65', 'Unicel', '@utext.com');
+INSERT INTO `cellprovider` VALUES ('66', 'US Cellular', '@email.uscc.net');
+INSERT INTO `cellprovider` VALUES ('67', 'US West', '@uswestdatamail.com');
+INSERT INTO `cellprovider` VALUES ('68', 'Verizon', '@vtext.com');
+INSERT INTO `cellprovider` VALUES ('69', 'Virgin Mobile', '@vmobl.com');
+INSERT INTO `cellprovider` VALUES ('70', 'Virgin Mobile Canada', '@vmobile.ca');
+INSERT INTO `cellprovider` VALUES ('71', 'West Central Wireless', '@sms.wcc.net');
+INSERT INTO `cellprovider` VALUES ('72', 'Western Wireless', '@cellularonewest.com');
+INSERT INTO `cellprovider` VALUES ('73', 'Can Cell', '@shawnCell');
+
+-- ----------------------------
+-- Table structure for `countrylist`
+-- ----------------------------
+DROP TABLE IF EXISTS `countrylist`;
+CREATE TABLE `countrylist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `countryName` text,
+  `priority` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of countrylist
+-- ----------------------------
+INSERT INTO `countrylist` VALUES ('1', 'United States Of America', '1');
+INSERT INTO `countrylist` VALUES ('2', 'Canada', '0');
+INSERT INTO `countrylist` VALUES ('3', 'Mexico', '0');
+INSERT INTO `countrylist` VALUES ('4', 'Japan', '0');
+INSERT INTO `countrylist` VALUES ('5', 'England', '0');
+INSERT INTO `countrylist` VALUES ('6', 'China', '0');
+INSERT INTO `countrylist` VALUES ('7', 'Australia', '0');
 
 -- ----------------------------
 -- Table structure for `stadiums`
@@ -43,7 +153,7 @@ INSERT INTO `stadiums` VALUES ('71', 'Minute Maid Park', 'Houston Astros', '501 
 INSERT INTO `stadiums` VALUES ('72', 'O.co Coliseum', 'Oakland Athletics', '7000 Coliseum Way, Oakland, CA 94621', '(510) 569-2121', 'September 18, 1966', '37,090 (April - August) & 55,945 (Sept - Jan)', 'true');
 INSERT INTO `stadiums` VALUES ('73', 'Oriole Park at Camden Yards', 'Baltimore Orioles', '333 West Camden Street, Baltimore, MD 21201', '(410) 685-9800', 'April 6, 1992', '48,187', 'true');
 INSERT INTO `stadiums` VALUES ('74', 'Progressive Field', 'Cleveland Indians', '2401 Ontario Street, Cleveland, OH 44115', '(216) 420-4487', 'April 2, 1994', '42,404', 'true');
-INSERT INTO `stadiums` VALUES ('75', 'Rogers Centre', 'Toronto Blue Jays', '1 Blue Jays Way, Toronto, Ontario, Canada M5V1J3', '+1 416-341-1000', 'June 3, 1989', '49,282', 'true');
+INSERT INTO `stadiums` VALUES ('75', 'Rogers Centre', 'Toronto Blue Jays', '1 Blue Jays Way, Toronto, Ontario, Canada M5V1J3', '(416) 341-1000', 'June 3, 1989', '49,282', 'true');
 INSERT INTO `stadiums` VALUES ('76', 'SafeCo Field', 'Seattle Mariners', '1516 First Avenue South, Seattle, WA 98134', '(206) 346-4000', 'July 15, 1999', '47,476', 'true');
 INSERT INTO `stadiums` VALUES ('77', 'Target Field', 'Minnesota Twins', '353 N 5th St, Minneapolis, MN 55403', '(800) 338-9467', 'April 12, 2010', '39,021', 'true');
 INSERT INTO `stadiums` VALUES ('78', 'Tropicana Field', 'Tampa Bay Rays', '1 Tropicana Dr, St. Petersburg, FL 33705', '(727) 825-3137', 'March 3, 1990', '31,042 (Regular Season) 42,735 (Postseason)', 'true');
@@ -74,7 +184,7 @@ CREATE TABLE `users` (
   `lastName` varchar(255) NOT NULL,
   `username` varchar(254) DEFAULT NULL,
   `email` varchar(254) DEFAULT NULL,
-  `password` varchar(254) DEFAULT NULL,
+  `password` varchar(36) DEFAULT NULL,
   `streetAddress` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `zipCode` int(5) DEFAULT NULL,
@@ -85,9 +195,12 @@ CREATE TABLE `users` (
   `cellPhoneProvider` varchar(254) DEFAULT NULL,
   `dateCreated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'Can', 'Dalgir', 'me', 'me@me.me', 'me', '255 Awesome Way', 'Awesome Town', '925614', 'Orange', 'ca', 'usa', '9494444444', 'att', '2014-04-21 19:31:34');
+INSERT INTO `users` VALUES ('1', 'admin', 'admin', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '25 Lorem Ipsem', 'Lorem', '99999', 'Ipsem', 'LI', 'USA', '9999999999', 'att', '2014-04-23 18:11:36');
+INSERT INTO `users` VALUES ('2', 'Shawn', 'Azar', 'cydia', 'cydiasa@gmail.com', '39b517d90fb2e4cacdb97f30ee15f13e', '2575 McCabe Way', 'Irvine', '92677', 'Orange', 'CA', 'USA', '9494442196', 'sprint', '2014-04-23 17:53:10');
+INSERT INTO `users` VALUES ('3', 'Jerry', 'Lebowitz', 'jerry', 'jerry@lebowitz.com', 'dba8700ccbafad828b83b29aa87a9b4f', '25 Lorem Ipsem', 'Lorem', '99999', 'Ipsem', 'LI', 'USA', '9999999999', 'att', '2014-04-23 18:11:38');
+INSERT INTO `users` VALUES ('4', 'Can', 'Dalgir', 'can', 'me@me.me', 'ab430bb8f2971825c7e8eec06802f26b', '255 Awesome Way', 'Awesome Town', '925614', 'Orange', 'ca', 'USA', '9494444444', 'att', '2014-04-23 17:49:33');
