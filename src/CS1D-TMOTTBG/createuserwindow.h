@@ -19,7 +19,12 @@ public:
     ~CreateUserWindow();
 
 private slots:
-    void on_pushButton_clicked();
+
+    void on_resetButton_clicked();
+
+    void on_createButton_clicked();
+
+    void on_cancelButton_clicked();
 
 private:
     Ui::CreateUserWindow *ui;

@@ -51,7 +51,7 @@ void MainWindow::on_pushButton_login_clicked()
     }
     else
     {
-        if(qry.exec("SELECT * FROM users WHERE username = '" + username +"' and password = MD5('" + password + "')"))
+        if(qry.exec("SELECT username, password FROM users WHERE username = '" + username +"' and password = MD5('" + password + "')"))
         {
             if(qry.next())
             {

@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
+Source Server         : localhost_3306
 Source Server Version : 50616
 Source Host           : localhost:3306
 Source Database       : cs1d
@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2014-04-23 20:01:32
+Date: 2014-04-24 00:47:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `cellprovider`
+-- Table structure for cellprovider
 -- ----------------------------
 DROP TABLE IF EXISTS `cellprovider`;
 CREATE TABLE `cellprovider` (
@@ -41,7 +41,7 @@ INSERT INTO `cellprovider` VALUES ('9', 'Blue Sky Frog', '@blueskyfrog.com');
 INSERT INTO `cellprovider` VALUES ('10', 'Bluegrass Cellular', '@sms.bluecell.com');
 INSERT INTO `cellprovider` VALUES ('11', 'Boost Mobile', '@myboostmobile.com');
 INSERT INTO `cellprovider` VALUES ('12', 'BPL Mobile', '@bplmobile.com');
-INSERT INTO `cellprovider` VALUES ('13', 'Carolina West Wireless', '10digit10digitnumber@cwwsms.com');
+INSERT INTO `cellprovider` VALUES ('13', 'Carolina West Wireless', '@cwwsms.com');
 INSERT INTO `cellprovider` VALUES ('14', 'Cellular One', '@mobile.celloneusa.com');
 INSERT INTO `cellprovider` VALUES ('15', 'Cellular South', '@csouth1.com');
 INSERT INTO `cellprovider` VALUES ('16', 'Centennial Wireless', '@cwemail.com');
@@ -60,8 +60,8 @@ INSERT INTO `cellprovider` VALUES ('28', 'Idea Cellular', '@ideacellular.net');
 INSERT INTO `cellprovider` VALUES ('29', 'Illinois Valley Cellular', '@ivctext.com');
 INSERT INTO `cellprovider` VALUES ('30', 'Inland Cellular Telephone', '@inlandlink.com');
 INSERT INTO `cellprovider` VALUES ('31', 'MCI', '@pagemci.com');
-INSERT INTO `cellprovider` VALUES ('32', 'Metrocall', '10digitpagernumber@page.metrocall.com');
-INSERT INTO `cellprovider` VALUES ('33', 'Metrocall 2-way', '10digitpagernumber@my2way.com');
+INSERT INTO `cellprovider` VALUES ('32', 'Metrocall', '@page.metrocall.com');
+INSERT INTO `cellprovider` VALUES ('33', 'Metrocall 2-way', '@my2way.com');
 INSERT INTO `cellprovider` VALUES ('34', 'Metro PCS', '@mymetropcs.com');
 INSERT INTO `cellprovider` VALUES ('35', 'Microcell', '@fido.ca');
 INSERT INTO `cellprovider` VALUES ('36', 'Midwest Wireless', '@clearlydigital.com');
@@ -75,7 +75,7 @@ INSERT INTO `cellprovider` VALUES ('43', 'Public Service Cellular', '@sms.pscel.
 INSERT INTO `cellprovider` VALUES ('44', 'Qwest', '@qwestmp.com');
 INSERT INTO `cellprovider` VALUES ('45', 'Rogers AT&T Wireless', '@pcs.rogers.com');
 INSERT INTO `cellprovider` VALUES ('46', 'Rogers Canada', '@pcs.rogers.com');
-INSERT INTO `cellprovider` VALUES ('47', 'Satellink', '10digitpagernumber.pageme@satellink.net');
+INSERT INTO `cellprovider` VALUES ('47', 'Satellink', '@satellink.net');
 INSERT INTO `cellprovider` VALUES ('48', 'Southwestern Bell', '@email.swbw.com');
 INSERT INTO `cellprovider` VALUES ('49', 'Sprint', '@messaging.sprintpcs.com');
 INSERT INTO `cellprovider` VALUES ('50', 'Sumcom', '@tms.suncom.com');
@@ -101,10 +101,9 @@ INSERT INTO `cellprovider` VALUES ('69', 'Virgin Mobile', '@vmobl.com');
 INSERT INTO `cellprovider` VALUES ('70', 'Virgin Mobile Canada', '@vmobile.ca');
 INSERT INTO `cellprovider` VALUES ('71', 'West Central Wireless', '@sms.wcc.net');
 INSERT INTO `cellprovider` VALUES ('72', 'Western Wireless', '@cellularonewest.com');
-INSERT INTO `cellprovider` VALUES ('73', 'Can Cell', '@shawnCell');
 
 -- ----------------------------
--- Table structure for `countrylist`
+-- Table structure for countrylist
 -- ----------------------------
 DROP TABLE IF EXISTS `countrylist`;
 CREATE TABLE `countrylist` (
@@ -112,21 +111,210 @@ CREATE TABLE `countrylist` (
   `countryName` text,
   `priority` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=204 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of countrylist
 -- ----------------------------
 INSERT INTO `countrylist` VALUES ('1', 'United States Of America', '1');
-INSERT INTO `countrylist` VALUES ('2', 'Canada', '0');
-INSERT INTO `countrylist` VALUES ('3', 'Mexico', '0');
-INSERT INTO `countrylist` VALUES ('4', 'Japan', '0');
-INSERT INTO `countrylist` VALUES ('5', 'England', '0');
-INSERT INTO `countrylist` VALUES ('6', 'China', '0');
-INSERT INTO `countrylist` VALUES ('7', 'Australia', '0');
+INSERT INTO `countrylist` VALUES ('8', 'Afghanistan', '0');
+INSERT INTO `countrylist` VALUES ('9', 'Albania', '0');
+INSERT INTO `countrylist` VALUES ('10', 'Algeria', '0');
+INSERT INTO `countrylist` VALUES ('11', 'Andorra', '0');
+INSERT INTO `countrylist` VALUES ('12', 'Angola', '0');
+INSERT INTO `countrylist` VALUES ('13', 'Antigua & Deps', '0');
+INSERT INTO `countrylist` VALUES ('14', 'Argentina', '0');
+INSERT INTO `countrylist` VALUES ('15', 'Armenia', '0');
+INSERT INTO `countrylist` VALUES ('16', 'Australia', '0');
+INSERT INTO `countrylist` VALUES ('17', 'Austria', '0');
+INSERT INTO `countrylist` VALUES ('18', 'Azerbaijan', '0');
+INSERT INTO `countrylist` VALUES ('19', 'Bahamas', '0');
+INSERT INTO `countrylist` VALUES ('20', 'Bahrain', '0');
+INSERT INTO `countrylist` VALUES ('21', 'Bangladesh', '0');
+INSERT INTO `countrylist` VALUES ('22', 'Barbados', '0');
+INSERT INTO `countrylist` VALUES ('23', 'Belarus', '0');
+INSERT INTO `countrylist` VALUES ('24', 'Belgium', '0');
+INSERT INTO `countrylist` VALUES ('25', 'Belize', '0');
+INSERT INTO `countrylist` VALUES ('26', 'Benin', '0');
+INSERT INTO `countrylist` VALUES ('27', 'Bhutan', '0');
+INSERT INTO `countrylist` VALUES ('28', 'Bolivia', '0');
+INSERT INTO `countrylist` VALUES ('29', 'Bosnia Herzegovina', '0');
+INSERT INTO `countrylist` VALUES ('30', 'Botswana', '0');
+INSERT INTO `countrylist` VALUES ('31', 'Brazil', '0');
+INSERT INTO `countrylist` VALUES ('32', 'Brunei', '0');
+INSERT INTO `countrylist` VALUES ('33', 'Bulgaria', '0');
+INSERT INTO `countrylist` VALUES ('34', 'Burkina', '0');
+INSERT INTO `countrylist` VALUES ('35', 'Burundi', '0');
+INSERT INTO `countrylist` VALUES ('36', 'Cambodia', '0');
+INSERT INTO `countrylist` VALUES ('37', 'Cameroon', '0');
+INSERT INTO `countrylist` VALUES ('38', 'Canada', '0');
+INSERT INTO `countrylist` VALUES ('39', 'Cape Verde', '0');
+INSERT INTO `countrylist` VALUES ('40', 'Central African Rep', '0');
+INSERT INTO `countrylist` VALUES ('41', 'Chad', '0');
+INSERT INTO `countrylist` VALUES ('42', 'Chile', '0');
+INSERT INTO `countrylist` VALUES ('43', 'China', '0');
+INSERT INTO `countrylist` VALUES ('44', 'Colombia', '0');
+INSERT INTO `countrylist` VALUES ('45', 'Comoros', '0');
+INSERT INTO `countrylist` VALUES ('46', 'Congo', '0');
+INSERT INTO `countrylist` VALUES ('47', 'Congo (Democratic Rep)', '0');
+INSERT INTO `countrylist` VALUES ('48', 'Costa Rica', '0');
+INSERT INTO `countrylist` VALUES ('49', 'Croatia', '0');
+INSERT INTO `countrylist` VALUES ('50', 'Cuba', '0');
+INSERT INTO `countrylist` VALUES ('51', 'Cyprus', '0');
+INSERT INTO `countrylist` VALUES ('52', 'Czech Republic', '0');
+INSERT INTO `countrylist` VALUES ('53', 'Denmark', '0');
+INSERT INTO `countrylist` VALUES ('54', 'Djibouti', '0');
+INSERT INTO `countrylist` VALUES ('55', 'Dominica', '0');
+INSERT INTO `countrylist` VALUES ('56', 'Dominican Republic', '0');
+INSERT INTO `countrylist` VALUES ('57', 'East Timor', '0');
+INSERT INTO `countrylist` VALUES ('58', 'Ecuador', '0');
+INSERT INTO `countrylist` VALUES ('59', 'Egypt', '0');
+INSERT INTO `countrylist` VALUES ('60', 'El Salvador', '0');
+INSERT INTO `countrylist` VALUES ('61', 'Equatorial Guinea', '0');
+INSERT INTO `countrylist` VALUES ('62', 'Eritrea', '0');
+INSERT INTO `countrylist` VALUES ('63', 'Estonia', '0');
+INSERT INTO `countrylist` VALUES ('64', 'Ethiopia', '0');
+INSERT INTO `countrylist` VALUES ('65', 'Fiji', '0');
+INSERT INTO `countrylist` VALUES ('66', 'Finland', '0');
+INSERT INTO `countrylist` VALUES ('67', 'France', '0');
+INSERT INTO `countrylist` VALUES ('68', 'Gabon', '0');
+INSERT INTO `countrylist` VALUES ('69', 'Gambia', '0');
+INSERT INTO `countrylist` VALUES ('70', 'Georgia', '0');
+INSERT INTO `countrylist` VALUES ('71', 'Germany', '0');
+INSERT INTO `countrylist` VALUES ('72', 'Ghana', '0');
+INSERT INTO `countrylist` VALUES ('73', 'Greece', '0');
+INSERT INTO `countrylist` VALUES ('74', 'Grenada', '0');
+INSERT INTO `countrylist` VALUES ('75', 'Guatemala', '0');
+INSERT INTO `countrylist` VALUES ('76', 'Guinea', '0');
+INSERT INTO `countrylist` VALUES ('77', 'Guinea-Bissau', '0');
+INSERT INTO `countrylist` VALUES ('78', 'Guyana', '0');
+INSERT INTO `countrylist` VALUES ('79', 'Haiti', '0');
+INSERT INTO `countrylist` VALUES ('80', 'Honduras', '0');
+INSERT INTO `countrylist` VALUES ('81', 'Hungary', '0');
+INSERT INTO `countrylist` VALUES ('82', 'Iceland', '0');
+INSERT INTO `countrylist` VALUES ('83', 'India', '0');
+INSERT INTO `countrylist` VALUES ('84', 'Indonesia', '0');
+INSERT INTO `countrylist` VALUES ('85', 'Iran', '0');
+INSERT INTO `countrylist` VALUES ('86', 'Iraq', '0');
+INSERT INTO `countrylist` VALUES ('87', 'Ireland (Republic)', '0');
+INSERT INTO `countrylist` VALUES ('88', 'Israel', '0');
+INSERT INTO `countrylist` VALUES ('89', 'Italy', '0');
+INSERT INTO `countrylist` VALUES ('90', 'Ivory Coast', '0');
+INSERT INTO `countrylist` VALUES ('91', 'Jamaica', '0');
+INSERT INTO `countrylist` VALUES ('92', 'Japan', '0');
+INSERT INTO `countrylist` VALUES ('93', 'Jordan', '0');
+INSERT INTO `countrylist` VALUES ('94', 'Kazakhstan', '0');
+INSERT INTO `countrylist` VALUES ('95', 'Kenya', '0');
+INSERT INTO `countrylist` VALUES ('96', 'Kiribati', '0');
+INSERT INTO `countrylist` VALUES ('97', 'Korea North', '0');
+INSERT INTO `countrylist` VALUES ('98', 'Korea South', '0');
+INSERT INTO `countrylist` VALUES ('99', 'Kosovo', '0');
+INSERT INTO `countrylist` VALUES ('100', 'Kuwait', '0');
+INSERT INTO `countrylist` VALUES ('101', 'Kyrgyzstan', '0');
+INSERT INTO `countrylist` VALUES ('102', 'Laos', '0');
+INSERT INTO `countrylist` VALUES ('103', 'Latvia', '0');
+INSERT INTO `countrylist` VALUES ('104', 'Lebanon', '0');
+INSERT INTO `countrylist` VALUES ('105', 'Lesotho', '0');
+INSERT INTO `countrylist` VALUES ('106', 'Liberia', '0');
+INSERT INTO `countrylist` VALUES ('107', 'Libya', '0');
+INSERT INTO `countrylist` VALUES ('108', 'Liechtenstein', '0');
+INSERT INTO `countrylist` VALUES ('109', 'Lithuania', '0');
+INSERT INTO `countrylist` VALUES ('110', 'Luxembourg', '0');
+INSERT INTO `countrylist` VALUES ('111', 'Macedonia', '0');
+INSERT INTO `countrylist` VALUES ('112', 'Madagascar', '0');
+INSERT INTO `countrylist` VALUES ('113', 'Malawi', '0');
+INSERT INTO `countrylist` VALUES ('114', 'Malaysia', '0');
+INSERT INTO `countrylist` VALUES ('115', 'Maldives', '0');
+INSERT INTO `countrylist` VALUES ('116', 'Mali', '0');
+INSERT INTO `countrylist` VALUES ('117', 'Malta', '0');
+INSERT INTO `countrylist` VALUES ('118', 'Marshall Islands', '0');
+INSERT INTO `countrylist` VALUES ('119', 'Mauritania', '0');
+INSERT INTO `countrylist` VALUES ('120', 'Mauritius', '0');
+INSERT INTO `countrylist` VALUES ('121', 'Mexico', '0');
+INSERT INTO `countrylist` VALUES ('122', 'Micronesia', '0');
+INSERT INTO `countrylist` VALUES ('123', 'Moldova', '0');
+INSERT INTO `countrylist` VALUES ('124', 'Monaco', '0');
+INSERT INTO `countrylist` VALUES ('125', 'Mongolia', '0');
+INSERT INTO `countrylist` VALUES ('126', 'Montenegro', '0');
+INSERT INTO `countrylist` VALUES ('127', 'Morocco', '0');
+INSERT INTO `countrylist` VALUES ('128', 'Mozambique', '0');
+INSERT INTO `countrylist` VALUES ('129', 'Myanmar, (Burma)', '0');
+INSERT INTO `countrylist` VALUES ('130', 'Namibia', '0');
+INSERT INTO `countrylist` VALUES ('131', 'Nauru', '0');
+INSERT INTO `countrylist` VALUES ('132', 'Nepal', '0');
+INSERT INTO `countrylist` VALUES ('133', 'Netherlands', '0');
+INSERT INTO `countrylist` VALUES ('134', 'New Zealand', '0');
+INSERT INTO `countrylist` VALUES ('135', 'Nicaragua', '0');
+INSERT INTO `countrylist` VALUES ('136', 'Niger', '0');
+INSERT INTO `countrylist` VALUES ('137', 'Nigeria', '0');
+INSERT INTO `countrylist` VALUES ('138', 'Norway', '0');
+INSERT INTO `countrylist` VALUES ('139', 'Oman', '0');
+INSERT INTO `countrylist` VALUES ('140', 'Pakistan', '0');
+INSERT INTO `countrylist` VALUES ('141', 'Palau', '0');
+INSERT INTO `countrylist` VALUES ('142', 'Panama', '0');
+INSERT INTO `countrylist` VALUES ('143', 'Papua New Guinea', '0');
+INSERT INTO `countrylist` VALUES ('144', 'Paraguay', '0');
+INSERT INTO `countrylist` VALUES ('145', 'Peru', '0');
+INSERT INTO `countrylist` VALUES ('146', 'Philippines', '0');
+INSERT INTO `countrylist` VALUES ('147', 'Poland', '0');
+INSERT INTO `countrylist` VALUES ('148', 'Portugal', '0');
+INSERT INTO `countrylist` VALUES ('149', 'Qatar', '0');
+INSERT INTO `countrylist` VALUES ('150', 'Romania', '0');
+INSERT INTO `countrylist` VALUES ('151', 'Russian Federation', '0');
+INSERT INTO `countrylist` VALUES ('152', 'Rwanda', '0');
+INSERT INTO `countrylist` VALUES ('153', 'St Kitts & Nevis', '0');
+INSERT INTO `countrylist` VALUES ('154', 'St Lucia', '0');
+INSERT INTO `countrylist` VALUES ('155', 'Saint Vincent & the Grenadines', '0');
+INSERT INTO `countrylist` VALUES ('156', 'Samoa', '0');
+INSERT INTO `countrylist` VALUES ('157', 'San Marino', '0');
+INSERT INTO `countrylist` VALUES ('158', 'Sao Tome & Principe', '0');
+INSERT INTO `countrylist` VALUES ('159', 'Saudi Arabia', '0');
+INSERT INTO `countrylist` VALUES ('160', 'Senegal', '0');
+INSERT INTO `countrylist` VALUES ('161', 'Serbia', '0');
+INSERT INTO `countrylist` VALUES ('162', 'Seychelles', '0');
+INSERT INTO `countrylist` VALUES ('163', 'Sierra Leone', '0');
+INSERT INTO `countrylist` VALUES ('164', 'Singapore', '0');
+INSERT INTO `countrylist` VALUES ('165', 'Slovakia', '0');
+INSERT INTO `countrylist` VALUES ('166', 'Slovenia', '0');
+INSERT INTO `countrylist` VALUES ('167', 'Solomon Islands', '0');
+INSERT INTO `countrylist` VALUES ('168', 'Somalia', '0');
+INSERT INTO `countrylist` VALUES ('169', 'South Africa', '0');
+INSERT INTO `countrylist` VALUES ('170', 'South Sudan', '0');
+INSERT INTO `countrylist` VALUES ('171', 'Spain', '0');
+INSERT INTO `countrylist` VALUES ('172', 'Sri Lanka', '0');
+INSERT INTO `countrylist` VALUES ('173', 'Sudan', '0');
+INSERT INTO `countrylist` VALUES ('174', 'Suriname', '0');
+INSERT INTO `countrylist` VALUES ('175', 'Swaziland', '0');
+INSERT INTO `countrylist` VALUES ('176', 'Sweden', '0');
+INSERT INTO `countrylist` VALUES ('177', 'Switzerland', '0');
+INSERT INTO `countrylist` VALUES ('178', 'Syria', '0');
+INSERT INTO `countrylist` VALUES ('179', 'Taiwan', '0');
+INSERT INTO `countrylist` VALUES ('180', 'Tajikistan', '0');
+INSERT INTO `countrylist` VALUES ('181', 'Tanzania', '0');
+INSERT INTO `countrylist` VALUES ('182', 'Thailand', '0');
+INSERT INTO `countrylist` VALUES ('183', 'Togo', '0');
+INSERT INTO `countrylist` VALUES ('184', 'Tonga', '0');
+INSERT INTO `countrylist` VALUES ('185', 'Trinidad & Tobago', '0');
+INSERT INTO `countrylist` VALUES ('186', 'Tunisia', '0');
+INSERT INTO `countrylist` VALUES ('187', 'Turkey', '0');
+INSERT INTO `countrylist` VALUES ('188', 'Turkmenistan', '0');
+INSERT INTO `countrylist` VALUES ('189', 'Tuvalu', '0');
+INSERT INTO `countrylist` VALUES ('190', 'Uganda', '0');
+INSERT INTO `countrylist` VALUES ('191', 'Ukraine', '0');
+INSERT INTO `countrylist` VALUES ('192', 'United Arab Emirates', '0');
+INSERT INTO `countrylist` VALUES ('193', 'United Kingdom', '0');
+INSERT INTO `countrylist` VALUES ('195', 'Uruguay', '0');
+INSERT INTO `countrylist` VALUES ('196', 'Uzbekistan', '0');
+INSERT INTO `countrylist` VALUES ('197', 'Vanuatu', '0');
+INSERT INTO `countrylist` VALUES ('198', 'Vatican City', '0');
+INSERT INTO `countrylist` VALUES ('199', 'Venezuela', '0');
+INSERT INTO `countrylist` VALUES ('200', 'Vietnam', '0');
+INSERT INTO `countrylist` VALUES ('201', 'Yemen', '0');
+INSERT INTO `countrylist` VALUES ('202', 'Zambia', '0');
+INSERT INTO `countrylist` VALUES ('203', 'Zimbabwe', '0');
 
 -- ----------------------------
--- Table structure for `stadiums`
+-- Table structure for stadiums
 -- ----------------------------
 DROP TABLE IF EXISTS `stadiums`;
 CREATE TABLE `stadiums` (
@@ -175,7 +363,7 @@ INSERT INTO `stadiums` VALUES ('93', 'PNC Park', 'Pittsburgh Pirates', '115 Fede
 INSERT INTO `stadiums` VALUES ('94', 'Turner Field', 'Atlanta Braves', '755 Hank Aaron Drive, Atlanta, GA 30315', '(404) 522-7630', 'March 29, 1997', '49,586', 'false');
 
 -- ----------------------------
--- Table structure for `users`
+-- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -185,22 +373,22 @@ CREATE TABLE `users` (
   `username` varchar(254) DEFAULT NULL,
   `email` varchar(254) DEFAULT NULL,
   `password` varchar(36) DEFAULT NULL,
-  `streetAddress` varchar(255) DEFAULT NULL,
+  `address` text,
   `city` varchar(255) DEFAULT NULL,
   `zipCode` int(5) DEFAULT NULL,
-  `county` varchar(255) DEFAULT NULL,
-  `state` varchar(255) DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL,
   `cellPhone` varchar(255) DEFAULT NULL,
   `cellPhoneProvider` varchar(254) DEFAULT NULL,
   `dateCreated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `adminstrator` smallint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'admin', 'admin', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '25 Lorem Ipsem', 'Lorem', '99999', 'Ipsem', 'LI', 'USA', '9999999999', 'att', '2014-04-23 18:11:36');
-INSERT INTO `users` VALUES ('2', 'Shawn', 'Azar', 'cydia', 'cydiasa@gmail.com', '39b517d90fb2e4cacdb97f30ee15f13e', '2575 McCabe Way', 'Irvine', '92677', 'Orange', 'CA', 'USA', '9494442196', 'sprint', '2014-04-23 17:53:10');
-INSERT INTO `users` VALUES ('3', 'Jerry', 'Lebowitz', 'jerry', 'jerry@lebowitz.com', 'dba8700ccbafad828b83b29aa87a9b4f', '25 Lorem Ipsem', 'Lorem', '99999', 'Ipsem', 'LI', 'USA', '9999999999', 'att', '2014-04-23 18:11:38');
-INSERT INTO `users` VALUES ('4', 'Can', 'Dalgir', 'can', 'me@me.me', 'ab430bb8f2971825c7e8eec06802f26b', '255 Awesome Way', 'Awesome Town', '925614', 'Orange', 'ca', 'USA', '9494444444', 'att', '2014-04-23 17:49:33');
+INSERT INTO `users` VALUES ('1', 'admin', 'admin', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '25 Lorem Ipsem', 'Lorem', '99999', 'USA', '9999999999', 'att', '2014-04-24 00:24:54', '1');
+INSERT INTO `users` VALUES ('2', 'Shawn', 'Azar', 'cydia', 'cydiasa@gmail.com', '39b517d90fb2e4cacdb97f30ee15f13e', '2575 McCabe Way', 'Irvine', '92677', 'USA', '9494442196', 'sprint', '2014-04-24 00:24:55', '1');
+INSERT INTO `users` VALUES ('3', 'Jerry', 'Lebowitz', 'jerry', 'jerry@lebowitz.com', 'dba8700ccbafad828b83b29aa87a9b4f', '25 Lorem Ipsem', 'Lorem', '99999', 'USA', '9999999999', 'att', '2014-04-24 00:24:55', '1');
+INSERT INTO `users` VALUES ('4', 'Can', 'Dalgir', 'can', 'me@me.me', 'ab430bb8f2971825c7e8eec06802f26b', '255 Awesome Way', 'Awesome Town', '925614', 'USA', '9494444444', 'att', '2014-04-24 00:24:59', '1');
+INSERT INTO `users` VALUES ('20', 'User', 'User', 'user', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-24 00:35:33', '0');
