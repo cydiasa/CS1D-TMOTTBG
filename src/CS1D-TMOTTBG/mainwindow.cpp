@@ -61,6 +61,7 @@ void MainWindow::on_pushButton_login_clicked()
                 DashboardWindow *dashboardWindow;
                 dashboardWindow = new DashboardWindow();
                 dashboardWindow->show();
+
             }
             else
             {

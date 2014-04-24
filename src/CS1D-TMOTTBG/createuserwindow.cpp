@@ -66,8 +66,15 @@ void CreateUserWindow::on_createButton_clicked()
     QString cellPhoneProvider = ui->cellProvidorSelectionBox->currentText();
 
     // Regular Expression
+    // Checks for 5 digits
+    // digits[min 5 - max 5]
     QRegExp zipCodeRegEx("^\\d{5}$");
-    QRegExp PhoneNumberRegEx("^\\d{10}$");
+    // Checks for 10 Digits
+    // digits[min 10 - max 10]
+    QRegExp phoneNumberRegEx("^\\d{10}$");
+    // Check for a valid Email
+    // anything[min 1]@anything[min 1].anything[min 2]
+    QRegExp emailRegEx("[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}");
 
     if(firstName.isEmpty())
     {
@@ -77,7 +84,7 @@ void CreateUserWindow::on_createButton_clicked()
     {
         ui->errorOutputLabel->setText("Invalid input for last name");
     }
-    else if(email.isEmpty())
+    else if(email.isEmpty() || !( emailRegEx.exactMatch(email)))
     {
         ui->errorOutputLabel->setText("Invalid input for email");
     }
@@ -105,7 +112,7 @@ void CreateUserWindow::on_createButton_clicked()
     {
         ui->errorOutputLabel->setText("Invalid input for country");
     }
-    else if(cellPhoneNumber.isEmpty() || !( PhoneNumberRegEx.exactMatch(cellPhoneNumber)))
+    else if(cellPhoneNumber.isEmpty() || !( phoneNumberRegEx.exactMatch(cellPhoneNumber)))
     {
         ui->errorOutputLabel->setText("Invalid input for cell phone number - 10 Digit Numbers Only");
     }
