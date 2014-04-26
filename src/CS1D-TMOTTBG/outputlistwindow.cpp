@@ -1,6 +1,7 @@
 #include "outputlistwindow.h"
 #include "ui_outputlistwindow.h"
 #include "outputlistdelegate.h"
+#include "displayindividualstadiuminformationwindow.h"
 #include <QTableWidgetItem>
 #include <QSqlQuery>
 #include <QDebug>
@@ -20,11 +21,9 @@ OutputListWindow::OutputListWindow(QWidget *parent) :
 }
 void OutputListWindow::cellPopup(int row,int col)
 {
-//    DashboardWindow *dashboardWindow;
-//    dashboardWindow = new DashboardWindow();
-//    dashboardWindow->show();
-    //    this->hide();
-    qDebug() << ui->tableWidget->item(row, col)->text();
+    DisplayIndividualStadiumInformationWindow *dashboardWindow;
+    dashboardWindow = new DisplayIndividualStadiumInformationWindow(ui->tableWidget->item(row, col)->text());
+    dashboardWindow->show();
 }
 OutputListWindow::~OutputListWindow()
 {

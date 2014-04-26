@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2014-04-24 12:54:28
+Date: 2014-04-26 13:20:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -43,15 +43,16 @@ CREATE TABLE `countrylist` (
 DROP TABLE IF EXISTS `stadiums`;
 CREATE TABLE `stadiums` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `stadiumTeamName` text,
   `stadiumName` text,
+  `stadiumTeamName` text,
   `address` text,
   `phoneNumber` text,
   `dateOpened` text,
   `population` text,
-  `americanLeague` text,
+  `americanLeague` tinyint(1) unsigned DEFAULT '0',
+  `grass` tinyint(1) unsigned DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Table structure for users

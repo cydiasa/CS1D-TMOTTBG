@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql declarative
+QT       += core gui sql declarative webkit webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,18 +16,21 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     createuserwindow.cpp \
     dashboardwindow.cpp \
-    outputlistwindow.cpp
+    outputlistwindow.cpp \
+    displayindividualstadiuminformationwindow.cpp
 
 HEADERS  += mainwindow.h \
     header.h \
     createuserwindow.h \
     dashboardwindow.h \
-    outputlistwindow.h
+    outputlistwindow.h \
+    displayindividualstadiuminformationwindow.h
 
 FORMS    += mainwindow.ui \
     createuserwindow.ui \
     dashboardwindow.ui \
-    outputlistwindow.ui
+    outputlistwindow.ui \
+    displayindividualstadiuminformationwindow.ui
 
 OTHER_FILES += \
     inputFileStadiums.txt \
