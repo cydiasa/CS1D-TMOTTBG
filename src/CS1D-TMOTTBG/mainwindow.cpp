@@ -70,10 +70,16 @@ void MainWindow::on_pushButton_login_clicked()
         }
     }
 
-
 }
 
-void MainWindow::on_pushButton_login_pressed()
+void MainWindow::on_usernameInputBox_returnPressed()
 {
     this->on_pushButton_login_clicked();
+    qDebug() << "on_usernameInputBox_returnPressed";
+}
+
+void MainWindow::on_passwordInputBox_returnPressed()
+{
+    this->on_pushButton_login_clicked();
+    qDebug() << "on_passwordInputBox_returnPressed";
 }

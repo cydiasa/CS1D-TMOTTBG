@@ -1,31 +1,22 @@
 import QtQuick 1.1
 
-ListView {
-    width: 100; height: 100
-    anchors.fill: parent
+Rectangle {
+      width: 200; height: 200
 
-    model: myModel
-    delegate: Rectangle {
-        id: delegateItem
-        width: parent.width; height: 100
-        color:  "blue"
-        Rectangle {
-            color: "white"
-            height: parent.height; width: 100
-            anchors.left: parent.left
-            Text {
-                id: name
-                text: qsTr("Click")
-            }
+     Component {
+         id: fruitDelegate
+         Row {
+                 id: fruit
+                 Text { text: " Fruit: " + name; color: fruit.ListView.view.fruit_color }
+                 Text { text: " Cost: $" + cost }
+                 Text { text: " Language: " + fruit.ListView.view.model.language }
          }
-        Text {
-            id: itexItem
-            anchors.left: imageItem.right
-            anchors.leftMargin: 20
-            anchors.verticalCenter: parent.verticalCenter
-            font.pixelSize: 40
-            // deligate can direclty use ListElement role name
-            text: imageName
-        }
-    }
-}
+     }
+
+     ListView {
+         property color fruit_color: "green"
+         model: fruitModel
+         delegate: fruitDelegate
+         anchors.fill: parent
+     }
+ }

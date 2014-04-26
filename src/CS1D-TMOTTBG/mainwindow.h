@@ -21,7 +21,9 @@ public:
 private slots:
     void on_pushButton_login_clicked();
 
-    void on_pushButton_login_pressed();
+    void on_usernameInputBox_returnPressed();
+
+    void on_passwordInputBox_returnPressed();
 
 private:
     Ui::MainWindow *ui;

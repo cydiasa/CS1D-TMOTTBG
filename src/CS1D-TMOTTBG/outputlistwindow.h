@@ -2,7 +2,7 @@
 #define OUTPUTLISTWINDOW_H
 
 #include <QDialog>
-
+#include <QSqlQuery>
 namespace Ui {
 class OutputListWindow;
 }
@@ -13,13 +13,16 @@ class OutputListWindow : public QDialog
 
 public:
     explicit OutputListWindow(QWidget *parent = 0);
+
     ~OutputListWindow();
 
 private slots:
     void on_pushButton_clicked();
+    void cellPopup(int row,int col);
 
 private:
     Ui::OutputListWindow *ui;
+    QSqlQuery query;
 };
 
 #endif // OUTPUTLISTWINDOW_H
