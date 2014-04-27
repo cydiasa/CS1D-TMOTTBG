@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>9</x>
-      <y>112</y>
+      <y>72</y>
       <width>121</width>
       <height>16</height>
      </rect>
@@ -31,7 +31,7 @@
     <property name="geometry">
      <rect>
       <x>138</x>
-      <y>112</y>
+      <y>72</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -47,7 +47,7 @@
     <property name="geometry">
      <rect>
       <x>267</x>
-      <y>112</y>
+      <y>72</y>
       <width>211</width>
       <height>16</height>
      </rect>
@@ -63,7 +63,7 @@
     <property name="geometry">
      <rect>
       <x>504</x>
-      <y>110</y>
+      <y>70</y>
       <width>131</width>
       <height>20</height>
      </rect>
@@ -79,7 +79,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>140</y>
+      <y>100</y>
       <width>261</width>
       <height>16</height>
      </rect>
@@ -92,7 +92,7 @@
     <property name="geometry">
      <rect>
       <x>397</x>
-      <y>140</y>
+      <y>100</y>
       <width>241</width>
       <height>16</height>
      </rect>
@@ -138,6 +138,45 @@
      <url>
       <string>about:blank</string>
      </url>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="zoonIncreaseButton">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>130</y>
+      <width>31</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="zoonDecreaseButton">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>130</y>
+      <width>31</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>135</y>
+      <width>26</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Zoom</string>
     </property>
    </widget>
   </widget>

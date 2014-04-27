@@ -8,7 +8,10 @@ DashBoardAdminWindow::DashBoardAdminWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::DashBoardAdminWindow)
 {
+
     ui->setupUi(this);
+
+    setAttribute(Qt::WA_DeleteOnClose);
 }
 
 DashBoardAdminWindow::~DashBoardAdminWindow()

@@ -1,6 +1,7 @@
 #include "admineditselecteduserwindow.h"
 #include "ui_admineditselecteduserwindow.h"
 #include <QSqlQuery>
+#include <QDebug>
 #include <QSql>
 
 AdminEditSelectedUserWindow::AdminEditSelectedUserWindow(QString id, QWidget *parent) :
@@ -9,6 +10,8 @@ AdminEditSelectedUserWindow::AdminEditSelectedUserWindow(QString id, QWidget *pa
 {
     ui->setupUi(this);
 
+    setAttribute(Qt::WA_DeleteOnClose);
+userID = id;
     // Country list
     query.exec("SELECT countryName FROM countryList ORDER BY priority DESC, countryName ASC");
     while(query.next())
@@ -103,10 +106,6 @@ void AdminEditSelectedUserWindow::on_createButton_clicked()
     {
         ui->errorOutputLabel->setText("Invalid input for username");
     }
-    else if(password.isEmpty())
-    {
-        ui->errorOutputLabel->setText("Invalid input for password");
-    }
     else if(address.isEmpty())
     {
         ui->errorOutputLabel->setText("Invalid input for address");
@@ -133,30 +132,48 @@ void AdminEditSelectedUserWindow::on_createButton_clicked()
     }
     else
     {
-//        if(query.exec("SELECT username, email FROM users WHERE username = '" + username +"' OR email = '" + email + "'"))
-//        {
-//            if(query.next())
-//            {
-//                ui->errorOutputLabel->setText("Email or Username already exists - Try another");
-//            }
-//            else
-//            {
-//                query.prepare("INSERT INTO users ( firstName, lastName, username, email, password, address, city, zipCode, country, cellPhone, cellPhoneProvider, dateCreated) VALUES (:firstName, :lastName, :email, :username, MD5(:password), :address, :city, :zipCode, :country, :cellPhone, :cellPhoneProvider, NOW())");
-//                query.bindValue(":firstName",firstName);
-//                query.bindValue(":lastName",lastName);
-//                query.bindValue(":email",email);
-//                query.bindValue(":username",username);
-//                query.bindValue(":password", password);
-//                query.bindValue(":address",address);
-//                query.bindValue(":city",city);
-//                query.bindValue(":zipCode",zipCode);
-//                query.bindValue(":country",country);
-//                query.bindValue(":cellPhone",cellPhoneNumber);
-//                query.bindValue(":cellPhoneProvider",cellPhoneProvider);
-//                query.exec();
-//                this->close();
-//            }
+        if(query.next())
+        {
+            ui->errorOutputLabel->setText("Email or Username already exists - Try another");
+        }
+        else if(password.isEmpty())
+        {
+            qDebug() << "meow";
+            query.prepare("UPDATE `users` SET `firstName`=:firstName ,`lastName`=:lastName ,`username`=:username ,`email`=:email ,`address`=:address ,`city`=:city ,`zipCode`=:zipCode ,`country`=:country ,`cellPhone`=:cellPhone ,`cellPhoneProvider`=:cellPhoneProvider ,`dateCreated`=NOW() WHERE id=" + userID);
 
+            query.bindValue(":firstName",firstName);
+            query.bindValue(":lastName",lastName);
+            query.bindValue(":email",email);
+            query.bindValue(":username",username);
+            query.bindValue(":address",address);
+            query.bindValue(":city",city);
+            query.bindValue(":zipCode",zipCode);
+            query.bindValue(":country",country);
+            query.bindValue(":cellPhone",cellPhoneNumber);
+            query.bindValue(":cellPhoneProvider",cellPhoneProvider);
+
+            query.exec();
+            this->close();
+        }
+        else
+        {
+            qDebug() << "meow2";
+            query.prepare("UPDATE `users` SET `firstName`=:firstName ,`lastName`=:lastName ,`username`=:username ,`email`=:email, `password`=MD5(:password), `address`=:address ,`city`=:city ,`zipCode`=:zipCode ,`country`=:country ,`cellPhone`=:cellPhone ,`cellPhoneProvider`=:cellPhoneProvider ,`dateCreated`=NOW() WHERE id=" + userID);
+
+            query.bindValue(":firstName",firstName);
+            query.bindValue(":lastName",lastName);
+            query.bindValue(":email",email);
+            query.bindValue(":username",username);
+            query.bindValue(":password",password);
+            query.bindValue(":address",address);
+            query.bindValue(":city",city);
+            query.bindValue(":zipCode",zipCode);
+            query.bindValue(":country",country);
+            query.bindValue(":cellPhone",cellPhoneNumber);
+            query.bindValue(":cellPhoneProvider",cellPhoneProvider);
+            query.exec();
+            this->close();
+        }
 
     }
 }

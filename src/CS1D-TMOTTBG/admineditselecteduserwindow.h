@@ -26,6 +26,7 @@ private slots:
 private:
     Ui::AdminEditSelectedUserWindow *ui;
     QSqlQuery query;
+    QString userID;
     QString firstName;
     QString lastName ;
     QString email   ;

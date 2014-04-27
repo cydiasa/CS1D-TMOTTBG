@@ -16,9 +16,16 @@ public:
     explicit DisplayIndividualStadiumInformationWindow(QString id, QWidget *parent = 0);
     ~DisplayIndividualStadiumInformationWindow();
 
+private slots:
+    void on_zoonIncreaseButton_clicked();
+
+    void on_zoonDecreaseButton_clicked();
+
 private:
     Ui::DisplayIndividualStadiumInformationWindow *ui;
     QSqlQuery query;
+    QString address;
+    int zoomLevel;
 
 };
 

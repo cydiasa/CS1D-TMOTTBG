@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setAttribute(Qt::WA_DeleteOnClose);
     // Create Connection to MYSQL
     database = QSqlDatabase::addDatabase("QMYSQL3");
     database.setConnectOptions();
@@ -82,7 +83,6 @@ void MainWindow::on_pushButton_login_clicked()
             }
         }
     }
-
 }
 
 void MainWindow::on_usernameInputBox_returnPressed()

@@ -7,6 +7,8 @@ CreateUserWindow::CreateUserWindow(QWidget *parent) :
     ui(new Ui::CreateUserWindow)
 {
     ui->setupUi(this);
+
+    setAttribute(Qt::WA_DeleteOnClose);
     ui->errorOutputLabel->setText("");
     ui->zipCodeInputBox->setMaxLength(5);
     ui->cellPhoneInputBox->setMaxLength(10);

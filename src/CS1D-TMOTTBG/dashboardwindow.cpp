@@ -8,6 +8,8 @@ DashboardWindow::DashboardWindow(QWidget *parent) :
     ui(new Ui::DashboardWindow)
 {
     ui->setupUi(this);
+
+    setAttribute(Qt::WA_DeleteOnClose);
 }
 
 DashboardWindow::~DashboardWindow()

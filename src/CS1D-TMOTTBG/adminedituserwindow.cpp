@@ -10,6 +10,7 @@ AdminEditUserWindow::AdminEditUserWindow(QWidget *parent) :
     ui(new Ui::AdminEditUserWindow)
 {
     ui->setupUi(this);
+    setAttribute(Qt::WA_DeleteOnClose);
     query.exec("SELECT id, username, firstName, lastName FROM users ORDER BY id ASC");
     while(query.next())
     {

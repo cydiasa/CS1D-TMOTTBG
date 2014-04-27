@@ -13,6 +13,8 @@ OutputListWindow::OutputListWindow(QWidget *parent) :
     ui(new Ui::OutputListWindow)
 {
     ui->setupUi(this);
+
+    setAttribute(Qt::WA_DeleteOnClose);
     connect(ui->tableWidget, SIGNAL(cellActivated(int,int)), this, SLOT(cellPopup(int)));
 
 

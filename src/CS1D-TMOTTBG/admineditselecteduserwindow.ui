@@ -27,7 +27,7 @@
      <string notr="true">color: rgb(170, 0, 0);</string>
     </property>
     <property name="text">
-     <string>[+] Error Output</string>
+     <string/>
     </property>
    </widget>
    <widget class="QSplitter" name="splitter">
@@ -92,14 +92,14 @@
      <item row="1" column="1">
       <widget class="QLineEdit" name="emailInputBox">
        <property name="text">
-        <string>a</string>
+        <string/>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="usernameInputBox">
        <property name="text">
-        <string>a</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -120,7 +120,7 @@
      <item row="2" column="3">
       <widget class="QLineEdit" name="passwordInputBox">
        <property name="text">
-        <string>a</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -141,7 +141,7 @@
      <item row="3" column="1">
       <widget class="QLineEdit" name="addressInputBox">
        <property name="text">
-        <string>a</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -191,14 +191,14 @@
      <item row="0" column="1">
       <widget class="QLineEdit" name="firstNameInputBox">
        <property name="text">
-        <string>a</string>
+        <string/>
        </property>
       </widget>
      </item>
      <item row="0" column="3">
       <widget class="QLineEdit" name="lastNameInputBox">
        <property name="text">
-        <string>a</string>
+        <string/>
        </property>
       </widget>
      </item>
