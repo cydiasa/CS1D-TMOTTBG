@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2014-04-26 13:20:56
+Date: 2014-04-26 19:25:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -72,6 +72,6 @@ CREATE TABLE `users` (
   `cellPhone` varchar(255) DEFAULT NULL,
   `cellPhoneProvider` varchar(254) DEFAULT NULL,
   `dateCreated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `adminstrator` smallint(1) NOT NULL DEFAULT '0',
+  `admin` smallint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
