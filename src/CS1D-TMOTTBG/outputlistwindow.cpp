@@ -13,16 +13,14 @@ OutputListWindow::OutputListWindow(QWidget *parent) :
     ui(new Ui::OutputListWindow)
 {
     ui->setupUi(this);
-    ui->tableWidget->setColumnWidth(2,275);
-    ui->tableWidget->setColumnWidth(7,25);
-    connect(ui->tableWidget, SIGNAL(cellActivated(int,int)), this, SLOT(cellPopup(int, int)));
+    connect(ui->tableWidget, SIGNAL(cellActivated(int,int)), this, SLOT(cellPopup(int)));
 
 
 }
-void OutputListWindow::cellPopup(int row,int col)
+void OutputListWindow::cellPopup(int row)
 {
     DisplayIndividualStadiumInformationWindow *dashboardWindow;
-    dashboardWindow = new DisplayIndividualStadiumInformationWindow(ui->tableWidget->item(row, col)->text());
+    dashboardWindow = new DisplayIndividualStadiumInformationWindow(ui->tableWidget->item(row, 0)->text());
     dashboardWindow->show();
 }
 OutputListWindow::~OutputListWindow()
@@ -38,6 +36,12 @@ void OutputListWindow::on_pushButton_clicked()
     QString searchType  = ui->searchTypeComboBox->currentText();
     QString leagueType  = ui->leagueComboBox->currentText();
     QString feildType   = ui->feildTypeComboBox->currentText();
+    int stadiumTeamNameLength = 0;
+    int stadiumNameLength = 0;
+    int addressLength = 0;
+    int phoneNumberLength = 0;
+    int dateOpenedLength = 0;
+    int populationLength = 0;
     QString queryStatement = "SELECT `stadiumTeamName`, `stadiumName`, `address`, `phoneNumber`, `dateOpened`, `population`, `americanLeague`, `grass`, `id` FROM `stadiums` ";
 
 
@@ -165,12 +169,21 @@ void OutputListWindow::on_pushButton_clicked()
     qDebug() << queryStatement;
     while(query.next())
     {
-        QTableWidgetItem *stadiumTeamName = new QTableWidgetItem(query.value(0).toString());
-        QTableWidgetItem *stadiumName     = new QTableWidgetItem(query.value(1).toString());
-        QTableWidgetItem *address         = new QTableWidgetItem(query.value(2).toString());
-        QTableWidgetItem *phoneNumber     = new QTableWidgetItem(query.value(3).toString());
-        QTableWidgetItem *dateOpened      = new QTableWidgetItem(query.value(4).toString());
-        QTableWidgetItem *population      = new QTableWidgetItem(query.value(5).toString());
+
+        QString stadiumTeamNameS = query.value(0).toString();
+        QString stadiumNameS     = query.value(1).toString();
+        QString addressS         = query.value(2).toString();
+        QString phoneNumberS     = query.value(3).toString();
+        QString dateOpenedS      = query.value(4).toString();
+        QString populationS      = query.value(5).toString();
+        QTableWidgetItem *stadiumTeamName = new QTableWidgetItem(stadiumTeamNameS);
+        QTableWidgetItem *stadiumName     = new QTableWidgetItem(stadiumNameS);
+        QTableWidgetItem *address         = new QTableWidgetItem(addressS);
+        QTableWidgetItem *phoneNumber     = new QTableWidgetItem(phoneNumberS);
+        QTableWidgetItem *dateOpened      = new QTableWidgetItem(dateOpenedS);
+        QTableWidgetItem *population      = new QTableWidgetItem(populationS);
+        QTableWidgetItem *link            = new QTableWidgetItem("Click Here");
+
 
         QTableWidgetItem *league;
         if(query.value(6).toString() == "1")
@@ -182,20 +195,60 @@ void OutputListWindow::on_pushButton_clicked()
             league  = new QTableWidgetItem("National League");
         }
 
-        QTableWidgetItem *link            = new QTableWidgetItem(query.value(8).toString());
 
         int j = ui->tableWidget->rowCount();
 
         ui->tableWidget->insertRow(j);
         ui->tableWidget->setItem(j,0,stadiumName);
+        if(stadiumNameS.length() > stadiumNameLength)
+        {
+            stadiumNameLength = stadiumNameS.length();
+        }
+
         ui->tableWidget->setItem(j,1,stadiumTeamName);
+        if(stadiumTeamNameS.length() > stadiumTeamNameLength)
+        {
+            stadiumTeamNameLength = stadiumTeamNameS.length();
+        }
+
         ui->tableWidget->setItem(j,2,address);
+        if(addressS.length() > addressLength)
+        {
+            addressLength = addressS.length();
+        }
+
         ui->tableWidget->setItem(j,3,phoneNumber);
+        if(phoneNumberS.length() > phoneNumberLength)
+        {
+            phoneNumberLength = phoneNumberS.length();
+        }
+
         ui->tableWidget->setItem(j,4,dateOpened);
+        if(dateOpenedS.length() > dateOpenedLength)
+        {
+            dateOpenedLength = dateOpenedS.length();
+        }
+
         ui->tableWidget->setItem(j,5,population);
+        if(populationS.length() > populationLength)
+        {
+            populationLength = populationS.length();
+        }
+
         ui->tableWidget->setItem(j,6,league);
+
         ui->tableWidget->setItem(j,7,link);
+
         ui->tableWidget->setSortingEnabled(true);
     }
+
+    ui->tableWidget->setColumnWidth(0,stadiumNameLength*6);
+    ui->tableWidget->setColumnWidth(1,stadiumTeamNameLength*6);
+    ui->tableWidget->setColumnWidth(2,addressLength*5.75);
+    ui->tableWidget->setColumnWidth(3,phoneNumberLength*6);
+    ui->tableWidget->setColumnWidth(4,dateOpenedLength*6);
+    ui->tableWidget->setColumnWidth(5,populationLength*5.25);
+    ui->tableWidget->setColumnWidth(6,100);
+    ui->tableWidget->setColumnWidth(7,60);
 
 }

@@ -5,6 +5,7 @@
 #include <QComboBox>
 #include <QSql>
 #include <QSqlQuery>
+#include <QString>
 
 namespace Ui {
 class CreateUserWindow;

@@ -18,7 +18,7 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void cellPopup(int row,int col);
+    void cellPopup(int row);
 
 private:
     Ui::OutputListWindow *ui;

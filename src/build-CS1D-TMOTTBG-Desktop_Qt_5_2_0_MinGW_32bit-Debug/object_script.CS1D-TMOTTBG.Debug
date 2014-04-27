@@ -5,9 +5,15 @@ INPUT(
 ./debug/dashboardwindow.o
 ./debug/outputlistwindow.o
 ./debug/displayindividualstadiuminformationwindow.o
+./debug/dashboardadminwindow.o
+./debug/adminedituserwindow.o
+./debug/admineditselecteduserwindow.o
 ./debug/moc_mainwindow.o
 ./debug/moc_createuserwindow.o
 ./debug/moc_dashboardwindow.o
 ./debug/moc_outputlistwindow.o
 ./debug/moc_displayindividualstadiuminformationwindow.o
+./debug/moc_dashboardadminwindow.o
+./debug/moc_adminedituserwindow.o
+./debug/moc_admineditselecteduserwindow.o
 );

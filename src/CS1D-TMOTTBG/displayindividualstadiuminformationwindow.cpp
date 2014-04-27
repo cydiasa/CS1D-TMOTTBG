@@ -12,7 +12,7 @@ DisplayIndividualStadiumInformationWindow::DisplayIndividualStadiumInformationWi
 {
     ui->setupUi(this);
 
-    query.exec("SELECT `stadiumTeamName`, `stadiumName`, `address`, `phoneNumber`, `dateOpened`, `population`, `grass` FROM `stadiums` WHERE id = '" + id + "' LIMIT 1;");
+    query.exec("SELECT `stadiumTeamName`, `stadiumName`, `address`, `phoneNumber`, `dateOpened`, `population`, `grass` FROM `stadiums` WHERE stadiumName = '" + id + "' LIMIT 1;");
 
     while(query.next())
     {

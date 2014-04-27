@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "dashboardwindow.h"
+#include "dashboardadminwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -51,16 +52,28 @@ void MainWindow::on_pushButton_login_clicked()
     }
     else
     {
-        if(qry.exec("SELECT username, password FROM users WHERE username = '" + username +"' and password = MD5('" + password + "')"))
+        if(qry.exec("SELECT username, password, admin FROM users WHERE username = '" + username +"' and password = MD5('" + password + "')"))
         {
             if(qry.next())
             {
                 ui->label_status->setText("Username and password is correct.");
 
-                // Switch to dashboard
-                DashboardWindow *dashboardWindow;
-                dashboardWindow = new DashboardWindow();
-                dashboardWindow->show();
+                if(qry.value(2).toBool() == true)
+                {
+                    // Switch to dashboard
+                    DashBoardAdminWindow *dashboardWindow;
+                    dashboardWindow = new DashBoardAdminWindow();
+                    dashboardWindow->show();
+                    qDebug() << "Logged in as Admin";
+                }
+                else
+                {
+                    // Switch to dashboard
+                    DashboardWindow *dashboardWindow;
+                    dashboardWindow = new DashboardWindow();
+                    dashboardWindow->show();
+                    qDebug() << "Logged in as User";
+                }
 
             }
             else
