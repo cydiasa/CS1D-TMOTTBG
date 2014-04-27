@@ -249,6 +249,6 @@ void OutputListWindow::on_pushButton_clicked()
     ui->tableWidget->setColumnWidth(4,dateOpenedLength*6);
     ui->tableWidget->setColumnWidth(5,populationLength*5.25);
     ui->tableWidget->setColumnWidth(6,100);
-    ui->tableWidget->setColumnWidth(7,60);
+    ui->tableWidget->setColumnWidth(7,75);
 
 }

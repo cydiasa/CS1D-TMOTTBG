@@ -39,7 +39,8 @@ DisplayIndividualStadiumInformationWindow::DisplayIndividualStadiumInformationWi
         ui->openDate->setText(dateOpened);
         ui->phoneNumber->setText(phoneNumber);
         ui->address->setText(address);
-        ui->webView->load(QUrl("https://www.google.com/maps/place/" + address));
+        ui->webView->load(QUrl("http://maps.googleapis.com/maps/api/staticmap?zoom=18&size=640x640&sensor=false&maptype=hybrid&markers=color:blue%7Clabel+" + address + "&left=" + address));
+//        ui->webView_2->load(QUrl("http://maps.googleapis.com/maps/api/streetview?location="  + address + "&zoom=18&size=393x479&fov=90&sensor=false"));
     }
 }
 
