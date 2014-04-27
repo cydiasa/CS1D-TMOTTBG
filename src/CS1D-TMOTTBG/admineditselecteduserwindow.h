@@ -23,6 +23,8 @@ private slots:
     void on_cancelButton_clicked();
 
 
+    void on_resetButton_clicked();
+
 private:
     Ui::AdminEditSelectedUserWindow *ui;
     QSqlQuery query;

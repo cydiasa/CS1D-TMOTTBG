@@ -49,6 +49,9 @@ userID = id;
         ui->zipCodeInputBox->setText(zipCode);
         ui->cityInputBox->setText(city);
         ui->cellPhoneInputBox->setText(cellPhoneNumber);
+
+        ui->countrySelectionBox->setCurrentText(country);
+        ui->cellProvidorSelectionBox->setCurrentText(cellPhoneProvider);
     }
 
 
@@ -183,3 +186,20 @@ void AdminEditSelectedUserWindow::on_cancelButton_clicked()
     this->close();
 }
 
+
+void AdminEditSelectedUserWindow::on_resetButton_clicked()
+{
+    ui->firstNameInputBox->setText(firstName);
+    ui->lastNameInputBox->setText(lastName);
+    ui->emailInputBox->setText(email);
+    ui->usernameInputBox->setText(username);
+    ui->addressInputBox->setText(address);
+    ui->zipCodeInputBox->setText(zipCode);
+    ui->cityInputBox->setText(city);
+    ui->cellPhoneInputBox->setText(cellPhoneNumber);
+}
+
+void AdminEditSelectedUserWindow::on_deleteButton_clicked()
+{
+
+}

@@ -1,6 +1,7 @@
 #include "dashboardadminwindow.h"
 #include "ui_dashboardadminwindow.h"
 #include "outputlistwindow.h"
+#include "admineditoutputlist.h"
 #include "createuserwindow.h"
 #include "adminedituserwindow.h"
 
@@ -38,5 +39,12 @@ void DashBoardAdminWindow::on_pushButton_3_clicked()
 {
     AdminEditUserWindow *ptr;
     ptr = new AdminEditUserWindow();
+    ptr->show();
+}
+
+void DashBoardAdminWindow::on_editListButton_clicked()
+{
+    AdminEditOutputList *ptr;
+    ptr = new AdminEditOutputList();
     ptr->show();
 }

@@ -8,6 +8,8 @@ INPUT(
 ./release/dashboardadminwindow.o
 ./release/adminedituserwindow.o
 ./release/admineditselecteduserwindow.o
+./release/admineditoutputlist.o
+./release/admineditselectedoutputlist.o
 ./release/moc_mainwindow.o
 ./release/moc_createuserwindow.o
 ./release/moc_dashboardwindow.o
@@ -16,4 +18,6 @@ INPUT(
 ./release/moc_dashboardadminwindow.o
 ./release/moc_adminedituserwindow.o
 ./release/moc_admineditselecteduserwindow.o
+./release/moc_admineditoutputlist.o
+./release/moc_admineditselectedoutputlist.o
 );

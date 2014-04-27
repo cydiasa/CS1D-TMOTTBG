@@ -20,7 +20,9 @@ SOURCES += main.cpp\
     displayindividualstadiuminformationwindow.cpp \
     dashboardadminwindow.cpp \
     adminedituserwindow.cpp \
-    admineditselecteduserwindow.cpp
+    admineditselecteduserwindow.cpp \
+    admineditoutputlist.cpp \
+    admineditselectedoutputlist.cpp
 
 HEADERS  += mainwindow.h \
     header.h \
@@ -30,7 +32,9 @@ HEADERS  += mainwindow.h \
     displayindividualstadiuminformationwindow.h \
     dashboardadminwindow.h \
     adminedituserwindow.h \
-    admineditselecteduserwindow.h
+    admineditselecteduserwindow.h \
+    admineditoutputlist.h \
+    admineditselectedoutputlist.h
 
 FORMS    += mainwindow.ui \
     createuserwindow.ui \
@@ -39,7 +43,9 @@ FORMS    += mainwindow.ui \
     displayindividualstadiuminformationwindow.ui \
     dashboardadminwindow.ui \
     adminedituserwindow.ui \
-    admineditselecteduserwindow.ui
+    admineditselecteduserwindow.ui \
+    admineditoutputlist.ui \
+    admineditselectedoutputlist.ui
 
 OTHER_FILES += \
     inputFileStadiums.txt \
