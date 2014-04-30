@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2014-04-26 19:24:42
+Date: 2014-04-30 13:58:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -362,7 +362,7 @@ INSERT INTO `stadiums` VALUES ('91', 'Nationals Park', 'Washington Nationals', '
 INSERT INTO `stadiums` VALUES ('92', 'Petco Park', 'San Diego Padres', '19 Tony Gwynn Drive, San Diego, CA 92101', '(619) 795-5000', 'April 8, 2004', '42,524', '0', '1');
 INSERT INTO `stadiums` VALUES ('93', 'PNC Park', 'Pittsburgh Pirates', '115 Federal St, Pittsburgh, PA 15212', '(412) 321-2827', 'March 31, 2001', '38,362', '0', '1');
 INSERT INTO `stadiums` VALUES ('94', 'Turner Field', 'Atlanta Braves', '755 Hank Aaron Drive, Atlanta, GA 30315', '(404) 522-7630', 'March 29, 1997', '49,586', '0', '1');
-INSERT INTO `stadiums` VALUES ('95', 'me', 'me', 'me', 'me', 'me', 'me', '0', '1');
+INSERT INTO `stadiums` VALUES ('95', 'me', 'me', '24261 bonnie lane, laguna niguel,ca 92677', 'me', 'me', 'me', '0', '1');
 INSERT INTO `stadiums` VALUES ('96', 'me', 'you', null, null, null, null, '0', '1');
 INSERT INTO `stadiums` VALUES ('97', 'you', 'me', null, null, null, null, '0', '1');
 
@@ -374,8 +374,8 @@ CREATE TABLE `users` (
   `id` bigint(6) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(255) NOT NULL,
   `lastName` varchar(255) NOT NULL,
-  `username` varchar(254) DEFAULT NULL,
-  `email` varchar(254) DEFAULT NULL,
+  `username` varchar(254) NOT NULL,
+  `email` varchar(254) NOT NULL,
   `password` varchar(36) DEFAULT NULL,
   `address` text,
   `city` varchar(255) DEFAULT NULL,
@@ -384,25 +384,23 @@ CREATE TABLE `users` (
   `cellPhone` varchar(255) DEFAULT NULL,
   `cellPhoneProvider` varchar(254) DEFAULT NULL,
   `dateCreated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `admin` smallint(1) NOT NULL DEFAULT '0',
+  `admin` smallint(1) unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'admin', 'admin', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '25 Lorem Ipsem', 'Lorem', '99999', 'USA', '9999999999', 'att', '2014-04-24 00:24:54', '1');
+INSERT INTO `users` VALUES ('1', 'admin2', 'admin23', 'admin', 'admin2@2d22.cod', '21232f297a57a5a743894a0e4a801fc3', '25 Lorem Ipsem', 'Lorem', '92677', 'Spain', '9999999999', 'Alltel', '2014-04-27 16:25:38', '1');
 INSERT INTO `users` VALUES ('2', 'Shawn', 'Azar', 'cydia', 'cydiasa@gmail.com', '39b517d90fb2e4cacdb97f30ee15f13e', '2575 McCabe Way', 'Irvine', '92677', 'USA', '9494442196', 'sprint', '2014-04-24 00:24:55', '1');
-INSERT INTO `users` VALUES ('3', 'Jerry', 'Lebowitz', 'jerry', 'jerry@lebowitz.com', 'dba8700ccbafad828b83b29aa87a9b4f', '25 Lorem Ipsem', 'Lorem', '99999', 'USA', '9999999999', 'att', '2014-04-24 00:24:55', '1');
+INSERT INTO `users` VALUES ('3', 'Jerry', 'Lebowitz', 'jerry', 'jer1ry@lebowitz.com', 'dba8700ccbafad828b83b29aa87a9b4f', '25 Lorem Ipsem', 'Lorem', '99999', 'United States Of America', '9999999999', '3 River Wireless', '2014-04-27 01:12:46', '1');
 INSERT INTO `users` VALUES ('4', 'Can', 'Dalgir', 'can', 'me@me.me', 'ab430bb8f2971825c7e8eec06802f26b', '255 Awesome Way', 'Awesome Town', '925614', 'USA', '9494444444', 'att', '2014-04-24 00:24:59', '1');
-INSERT INTO `users` VALUES ('20', 'User', 'User', 'user', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'Albania', 'User', '3 River Wireless', '2014-04-26 17:48:34', '0');
-INSERT INTO `users` VALUES ('21', 'User1', 'User1', 'user1', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:14:54', '0');
-INSERT INTO `users` VALUES ('22', 'User2', 'User2', 'user2', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:14:54', '0');
-INSERT INTO `users` VALUES ('23', 'User3', 'User3', 'user3', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:14:55', '0');
-INSERT INTO `users` VALUES ('24', 'User4', 'User4', 'user4', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:14:55', '0');
-INSERT INTO `users` VALUES ('25', 'User5', 'User5', 'user5', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:14:55', '0');
-INSERT INTO `users` VALUES ('26', 'User6', 'User6', 'user6', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:14:56', '0');
-INSERT INTO `users` VALUES ('27', 'User7', 'User7', 'user7', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:14:57', '0');
-INSERT INTO `users` VALUES ('28', 'User8', 'User8', 'user8', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:14:58', '0');
-INSERT INTO `users` VALUES ('29', 'User9', 'User9', 'user9', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:14:58', '0');
-INSERT INTO `users` VALUES ('30', 'User0', 'User0', 'user0', 'User@User.User', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', 'User', '92677', 'United States Of America', 'User', '3 River Wireless', '2014-04-26 17:15:00', '0');
+INSERT INTO `users` VALUES ('20', 'admin', 'admin32', 'admin1', 'admin@admin.com', 'ee11cbb19052e40b07aac0ca060c23ee', '25 Lorem Ipsem', 'Lorem', '99999', 'United States Of America', '9999999999', '3 River Wireless', '2014-04-27 16:17:47', '0');
+INSERT INTO `users` VALUES ('21', 'admin', 'admin32', 'admin2', 'admin@admin.com', 'ee11cbb19052e40b07aac0ca060c23ee', '25 Lorem Ipsem', 'Lorem', '99999', 'Spain', '9999999999', '3 River Wireless', '2014-04-27 16:17:50', '0');
+INSERT INTO `users` VALUES ('22', 'admin', 'admin32', 'admin3', 'admin@admin.com', 'ee11cbb19052e40b07aac0ca060c23ee', '25 Lorem Ipsem', 'Lorem', '99999', 'France', '9999999999', '3 River Wireless', '2014-04-27 16:17:51', '0');
+INSERT INTO `users` VALUES ('23', 'admin', 'admin32', 'admin4', 'admin@admin.com', 'ee11cbb19052e40b07aac0ca060c23ee', '25 Lorem Ipsem', 'Lorem', '99999', 'United States Of America', '9999999999', '3 River Wireless', '2014-04-27 16:17:51', '0');
+INSERT INTO `users` VALUES ('24', 'admin', 'admin32', 'admin5', 'admin@admin.com', 'ee11cbb19052e40b07aac0ca060c23ee', '25 Lorem Ipsem', 'Lorem', '99999', 'United States Of America', '9999999999', '3 River Wireless', '2014-04-27 16:17:52', '0');
+INSERT INTO `users` VALUES ('25', 'admin', 'admin32', 'admin6', 'admin@admin.com', 'ee11cbb19052e40b07aac0ca060c23ee', '25 Lorem Ipsem', 'Lorem', '99999', 'United States Of America', '9999999999', '3 River Wireless', '2014-04-27 16:17:52', '0');
+INSERT INTO `users` VALUES ('26', 'admin', 'admin32', 'admin7', 'admin@admin.com', 'ee11cbb19052e40b07aac0ca060c23ee', '25 Lorem Ipsem', 'Lorem', '99999', 'United States Of America', '9999999999', '3 River Wireless', '2014-04-27 16:17:53', '0');
+INSERT INTO `users` VALUES ('27', 'admin', 'admin32', 'admin8', 'admin@admin.com', 'ee11cbb19052e40b07aac0ca060c23ee', '25 Lorem Ipsem', 'Lorem', '99999', 'United States Of America', '9999999999', '3 River Wireless', '2014-04-27 16:17:53', '0');
+INSERT INTO `users` VALUES ('28', 'admin', 'admin32', 'admin9', 'admin@admin.com', 'ee11cbb19052e40b07aac0ca060c23ee', '25 Lorem Ipsem', 'Lorem', '99999', 'United States Of America', '9999999999', '3 River Wireless', '2014-04-27 16:17:54', '0');

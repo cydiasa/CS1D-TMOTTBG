@@ -19,3 +19,13 @@ AdminEditOutputList::~AdminEditOutputList()
 {
     delete ui;
 }
+
+void AdminEditOutputList::on_pushButton_clicked()
+{
+    QStringList pieces = ui->comboBox->currentText().split(" |");
+    QString editID = pieces.value( 0 );
+
+    AdminEditSelectedOutputList *ptr;
+    ptr = new AdminEditSelectedOutputList(editID);
+    ptr->show();
+}

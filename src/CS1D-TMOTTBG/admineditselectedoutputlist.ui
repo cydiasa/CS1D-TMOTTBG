@@ -14,20 +14,20 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="saveButton">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>280</x>
       <y>290</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Save</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -37,6 +37,19 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="teamNameEditBox"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="stadiumNameEditBox"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Grass Type</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
@@ -44,18 +57,8 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Address</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QLineEdit" name="addressEditBox"/>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_3">
@@ -65,37 +68,14 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_3"/>
+      <widget class="QLineEdit" name="phoneNumberEditBox"/>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_8">
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Openning Date</string>
+        <string>Address</string>
        </property>
       </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QDateEdit" name="dateEdit"/>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>Seating Capacity</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEdit_4"/>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>Grass Type</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="lineEdit_5"/>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_4">
@@ -104,8 +84,26 @@
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="lineEdit_6"/>
+     <item row="7" column="1">
+      <widget class="QComboBox" name="leagueTypeComboBox">
+       <item>
+        <property name="text">
+         <string>National League</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>American League</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Seating Capacity</string>
+       </property>
+      </widget>
      </item>
      <item row="7" column="0">
       <widget class="QLabel" name="label_7">
@@ -114,10 +112,73 @@
        </property>
       </widget>
      </item>
-     <item row="7" column="1">
-      <widget class="QLineEdit" name="lineEdit_7"/>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Openning Date</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QComboBox" name="grassTypeComboBox">
+       <item>
+        <property name="text">
+         <string>Grass</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Astro Turf</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="openningDateEditBox"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="seatingCapacityEditBox"/>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="cancelButton">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>290</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cancelButton_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cancelButton_3">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>290</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

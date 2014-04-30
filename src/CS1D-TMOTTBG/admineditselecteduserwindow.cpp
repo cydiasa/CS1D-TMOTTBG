@@ -1,6 +1,7 @@
 #include "admineditselecteduserwindow.h"
 #include "ui_admineditselecteduserwindow.h"
 #include <QSqlQuery>
+#include <QMessageBox>
 #include <QDebug>
 #include <QSql>
 
@@ -201,5 +202,16 @@ void AdminEditSelectedUserWindow::on_resetButton_clicked()
 
 void AdminEditSelectedUserWindow::on_deleteButton_clicked()
 {
+    QMessageBox msgBox;
+    msgBox.setText("Confirm Deletion from Database, Cannot be undone");
+     QPushButton *connectButton = msgBox.addButton(tr("Confirm Delete"), QMessageBox::ActionRole);
+     QPushButton *abortButton = msgBox.addButton(QMessageBox::Abort);
 
+     msgBox.exec();
+
+     if (msgBox.clickedButton() == connectButton) {
+         query.prepare("DELETE from `users` WHERE id=" + userID + " LIMIT 1;");
+         query.exec();
+         this->close();
+     }
 }

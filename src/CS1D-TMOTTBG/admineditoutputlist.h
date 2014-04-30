@@ -16,6 +16,9 @@ public:
     explicit AdminEditOutputList(QWidget *parent = 0);
     ~AdminEditOutputList();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::AdminEditOutputList *ui;
     QSqlQuery query;
