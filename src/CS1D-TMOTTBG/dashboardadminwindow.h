@@ -24,6 +24,8 @@ private slots:
 
     void on_editListButton_clicked();
 
+    void on_editListButton_2_clicked();
+
 private:
     Ui::DashBoardAdminWindow *ui;
 };

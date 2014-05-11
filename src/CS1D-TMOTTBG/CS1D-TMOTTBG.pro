@@ -22,7 +22,9 @@ SOURCES += main.cpp\
     adminedituserwindow.cpp \
     admineditselecteduserwindow.cpp \
     admineditoutputlist.cpp \
-    admineditselectedoutputlist.cpp
+    admineditselectedoutputlist.cpp \
+    displayvacationplannerwindow.cpp \
+    displayvacationcheckedpathwindow.cpp
 
 HEADERS  += mainwindow.h \
     header.h \
@@ -34,7 +36,9 @@ HEADERS  += mainwindow.h \
     adminedituserwindow.h \
     admineditselecteduserwindow.h \
     admineditoutputlist.h \
-    admineditselectedoutputlist.h
+    admineditselectedoutputlist.h \
+    displayvacationplannerwindow.h \
+    displayvacationcheckedpathwindow.h
 
 FORMS    += mainwindow.ui \
     createuserwindow.ui \
@@ -45,10 +49,14 @@ FORMS    += mainwindow.ui \
     adminedituserwindow.ui \
     admineditselecteduserwindow.ui \
     admineditoutputlist.ui \
-    admineditselectedoutputlist.ui
+    admineditselectedoutputlist.ui \
+    displayvacationplannerwindow.ui \
+    displayvacationcheckedpathwindow.ui
 
 OTHER_FILES += \
     inputFileStadiums.txt \
     inputFileCellProvidor.txt \
     inputFileStadiumCode.txt \
     inputFileCellProvidorCode.txt
+
+RESOURCES +=

@@ -79,6 +79,19 @@
      <string>Edit List</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="editListButton_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>20</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Vacation Planner</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

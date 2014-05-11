@@ -57,34 +57,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
-//void MainWindow::fileIsReady( QNetworkReply * reply)
-//{
-//    static QMap<double, QString> sortedList;
-//    QString returnedXML = reply->readAll();
 
-//    qDebug() << returnedXML;
-//    QDomDocument mDocument;
-//    QDomElement  mDocumentElement;
-
-//    mDocument.setContent(returnedXML);
-
-//    QDomNode row = mDocument.namedItem("DistanceMatrixResponse").lastChildElement();
-//    QDomNode root = mDocument.namedItem("DistanceMatrixResponse");
-//    QDomNodeList distanceNode = row.childNodes();
-//    QDomNodeList nameNode = root.childNodes();
-
-//    for (int i = 0; i < distanceNode.count(); ++i)
-//    {
-//        sortedList.insert(distanceNode.at(i).toElement().namedItem("distance").childNodes().at(1).toElement().text().replace(",","").split(" ")[0].toDouble(), nameNode.at(i+2).toElement().text());
-//    }
-
-//    QMap<double, QString>::iterator i;
-//    for (i = sortedList.begin(); i != sortedList.end(); ++i)
-//    {
-//         qDebug() << i.key() << ": " << i.value() << endl;
-//    }
-
-//}
 
 MainWindow::~MainWindow()
 {

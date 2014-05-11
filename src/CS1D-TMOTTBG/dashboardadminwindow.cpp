@@ -4,6 +4,7 @@
 #include "admineditoutputlist.h"
 #include "createuserwindow.h"
 #include "adminedituserwindow.h"
+#include "displayvacationplannerwindow.h"
 
 DashBoardAdminWindow::DashBoardAdminWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -46,5 +47,13 @@ void DashBoardAdminWindow::on_editListButton_clicked()
 {
     AdminEditOutputList *ptr;
     ptr = new AdminEditOutputList();
+    ptr->show();
+}
+
+void DashBoardAdminWindow::on_editListButton_2_clicked()
+{
+    DisplayVacationPlannerWindow *ptr;
+    ptr = new DisplayVacationPlannerWindow();
+
     ptr->show();
 }

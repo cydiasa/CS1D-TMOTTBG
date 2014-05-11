@@ -10,6 +10,8 @@ INPUT(
 ./debug/admineditselecteduserwindow.o
 ./debug/admineditoutputlist.o
 ./debug/admineditselectedoutputlist.o
+./debug/displayvacationplannerwindow.o
+./debug/displayvacationcheckedpathwindow.o
 ./debug/moc_mainwindow.o
 ./debug/moc_createuserwindow.o
 ./debug/moc_dashboardwindow.o
@@ -20,4 +22,6 @@ INPUT(
 ./debug/moc_admineditselecteduserwindow.o
 ./debug/moc_admineditoutputlist.o
 ./debug/moc_admineditselectedoutputlist.o
+./debug/moc_displayvacationplannerwindow.o
+./debug/moc_displayvacationcheckedpathwindow.o
 );

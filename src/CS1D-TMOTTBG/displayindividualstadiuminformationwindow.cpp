@@ -96,27 +96,21 @@ void DisplayIndividualStadiumInformationWindow::on_distanceToDropDown_currentTex
     {
         destination =  queryDistanceAddress.value(0).toString();
 
-
-    QNetworkAccessManager * manager = new QNetworkAccessManager(this);
-    connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(fileIsReady(QNetworkReply*)) );
-    manager->get(QNetworkRequest(QUrl("http://maps.googleapis.com/maps/api/distancematrix/xml?origins=" + address + "&destinations=" + destination + "&mode=driving&sensor=false&units=imperial")));
-    qDebug() << "http://maps.googleapis.com/maps/api/distancematrix/xml?origins=" + address + "&destinations=" + destination  + "&mode=driving&sensor=false&units=imperial";
+        QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+        connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(fileIsReady(QNetworkReply*)) );
+        manager->get(QNetworkRequest(QUrl("http://maps.googleapis.com/maps/api/distancematrix/xml?origins=" + address + "&destinations=" + destination + "&mode=driving&sensor=false&units=imperial")));
     }
 }
 
 void DisplayIndividualStadiumInformationWindow::fileIsReady( QNetworkReply * reply)
 {
-    static QMap<double, QString> sortedList;
     QString returnedXML = reply->readAll();
 
-    qDebug() << returnedXML;
     QDomDocument mDocument;
     mDocument.setContent(returnedXML);
 
     QDomNode row = mDocument.namedItem("DistanceMatrixResponse").lastChildElement();
-    QDomNode root = mDocument.namedItem("DistanceMatrixResponse");
     QDomNodeList distanceNode = row.childNodes();
-    QDomNodeList nameNode = root.childNodes();
 
     ui->distanceBetweenLabel->setText(" is " + distanceNode.at(0).toElement().namedItem("distance").childNodes().at(1).toElement().text().replace(",","").split(" ")[0] + " Miles");
 
