@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QDebug>
+#include <QNetworkReply>
 #include <QFileInfo>
 
 namespace Ui {
@@ -13,7 +14,11 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
+    struct ListStruct
+    {
+        QString cityName;
+        QString     distance;
+    };
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -24,6 +29,10 @@ private slots:
     void on_usernameInputBox_returnPressed();
 
     void on_passwordInputBox_returnPressed();
+
+//    void fileIsReady(QNetworkReply* reply);
+
+
 
 private:
     Ui::MainWindow *ui;

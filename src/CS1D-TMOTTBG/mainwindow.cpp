@@ -3,6 +3,21 @@
 #include "dashboardwindow.h"
 #include "dashboardadminwindow.h"
 
+
+
+
+#include <QJsonDocument>
+#include <QJsonValue>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QNetworkAccessManager>
+#include <QUrl>
+#include <QNetworkRequest>
+#include <QString>
+#include <QtXml/QDomDocument>
+#include <QtXml/QDomDocument>
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -13,10 +28,12 @@ MainWindow::MainWindow(QWidget *parent) :
     // Create Connection to MYSQL
     database = QSqlDatabase::addDatabase("QMYSQL3");
     database.setConnectOptions();
-    database.setHostName("localhost");
+//    database.setHostName("localhost");
+    database.setHostName("h.cydiasolutions.com");
+    database.setPort(19996);
     database.setDatabaseName("cs1d");
-    database.setUserName("root");
-    database.setPassword("");
+    database.setUserName("cs1d");
+    database.setPassword("Cydia7x7");
 
     // Check to see if were connected to the database
     if(!database.open())
@@ -28,7 +45,46 @@ MainWindow::MainWindow(QWidget *parent) :
     {
         ui->label_status->setText("Connected to the Database!");
     }
+
+
+
+
+
+//    QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+//    connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(fileIsReady(QNetworkReply*)) );
+//    manager->get(QNetworkRequest(QUrl("http://maps.googleapis.com/maps/api/distancematrix/xml?origins=Irvine+CA&destinations=San+Fransico+CA|New+Mexico|New+York+NY|Las+Vegas|Los+Angeles+CA&mode=driving&sensor=false&units=imperial")));
+
+
 }
+
+//void MainWindow::fileIsReady( QNetworkReply * reply)
+//{
+//    static QMap<double, QString> sortedList;
+//    QString returnedXML = reply->readAll();
+
+//    qDebug() << returnedXML;
+//    QDomDocument mDocument;
+//    QDomElement  mDocumentElement;
+
+//    mDocument.setContent(returnedXML);
+
+//    QDomNode row = mDocument.namedItem("DistanceMatrixResponse").lastChildElement();
+//    QDomNode root = mDocument.namedItem("DistanceMatrixResponse");
+//    QDomNodeList distanceNode = row.childNodes();
+//    QDomNodeList nameNode = root.childNodes();
+
+//    for (int i = 0; i < distanceNode.count(); ++i)
+//    {
+//        sortedList.insert(distanceNode.at(i).toElement().namedItem("distance").childNodes().at(1).toElement().text().replace(",","").split(" ")[0].toDouble(), nameNode.at(i+2).toElement().text());
+//    }
+
+//    QMap<double, QString>::iterator i;
+//    for (i = sortedList.begin(); i != sortedList.end(); ++i)
+//    {
+//         qDebug() << i.key() << ": " << i.value() << endl;
+//    }
+
+//}
 
 MainWindow::~MainWindow()
 {
