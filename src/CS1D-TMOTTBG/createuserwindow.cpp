@@ -3,10 +3,15 @@
 #include "QDebug"
 
 CreateUserWindow::CreateUserWindow(QWidget *parent) :
-    QDialog(parent),
+    QDialog(parent, Qt::FramelessWindowHint),
     ui(new Ui::CreateUserWindow)
 {
     ui->setupUi(this);
+
+    int x = 1000 ; // whatever
+    int y = 215 ; // whatever
+
+    move (x, y) ;
 
     setAttribute(Qt::WA_DeleteOnClose);
     ui->errorOutputLabel->setText("");

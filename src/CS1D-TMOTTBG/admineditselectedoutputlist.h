@@ -19,7 +19,12 @@ public:
 private slots:
     void on_cancelButton_clicked();
 
-    void on_cancelButton_2_clicked();
+
+    void on_saveButton_clicked();
+
+    void on_resetButton_clicked();
+
+    void on_deleteButton_clicked();
 
 private:
     Ui::AdminEditSelectedOutputList *ui;
@@ -34,6 +39,7 @@ private:
     americanLeague,
     grass,
     userID = "";
+
 };
 
 #endif // ADMINEDITSELECTEDOUTPUTLIST_H

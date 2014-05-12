@@ -21,6 +21,7 @@ class MainWindow : public QMainWindow
     };
 public:
     explicit MainWindow(QWidget *parent = 0);
+    int freezeValue();
     ~MainWindow();
 
 private slots:
@@ -30,9 +31,9 @@ private slots:
 
     void on_passwordInputBox_returnPressed();
 
-//    void fileIsReady(QNetworkReply* reply);
 
 
+    void on_NonUserInterface_Exit_BTN_clicked();
 
 private:
     Ui::MainWindow *ui;

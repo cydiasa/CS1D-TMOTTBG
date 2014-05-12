@@ -2,6 +2,7 @@
 #include "ui_dashboardwindow.h"
 #include "createuserwindow.h"
 #include "outputlistwindow.h"
+#include "displaysouvenirwindow.h"
 
 DashboardWindow::DashboardWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -28,5 +29,12 @@ void DashboardWindow::on_pushButton_2_clicked()
 {
     OutputListWindow *ptr;
     ptr = new OutputListWindow();
+    ptr->show();
+}
+
+void DashboardWindow::on_souvList_clicked()
+{
+    DisplaySouvenirWindow *ptr;
+    ptr = new DisplaySouvenirWindow();
     ptr->show();
 }

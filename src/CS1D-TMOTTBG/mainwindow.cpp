@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "dashboardwindow.h"
 #include "dashboardadminwindow.h"
+#include "securepasswordpass.h"
 
 
 
@@ -14,21 +15,36 @@
 #include <QUrl>
 #include <QNetworkRequest>
 #include <QString>
+#include <QDesktopServices>
+#include <QDesktopWidget>
 #include <QtXml/QDomDocument>
 #include <QtXml/QDomDocument>
 
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
+    QMainWindow(parent, Qt::FramelessWindowHint),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
     setAttribute(Qt::WA_DeleteOnClose);
+
+    QEventLoop EventLoop (this) ;
+    for (int i = 0 ; i < 10 ; i++)
+      if (!EventLoop.processEvents()) break ;
+
+    hide() ;
+    setAttribute (Qt::WA_DontShowOnScreen, false) ;
+
+    int x = 1198 ; // whatever
+    int y = 215 ; // whatever
+
+    move (x, y) ;
+
+
     // Create Connection to MYSQL
     database = QSqlDatabase::addDatabase("QMYSQL3");
     database.setConnectOptions();
-//    database.setHostName("localhost");
     database.setHostName("h.cydiasolutions.com");
     database.setPort(19996);
     database.setDatabaseName("cs1d");
@@ -46,18 +62,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->label_status->setText("Connected to the Database!");
     }
 
-
-
-
-
-//    QNetworkAccessManager * manager = new QNetworkAccessManager(this);
-//    connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(fileIsReady(QNetworkReply*)) );
-//    manager->get(QNetworkRequest(QUrl("http://maps.googleapis.com/maps/api/distancematrix/xml?origins=Irvine+CA&destinations=San+Fransico+CA|New+Mexico|New+York+NY|Las+Vegas|Los+Angeles+CA&mode=driving&sensor=false&units=imperial")));
-
-
 }
-
-
 
 MainWindow::~MainWindow()
 {
@@ -94,6 +99,11 @@ void MainWindow::on_pushButton_login_clicked()
                     DashBoardAdminWindow *dashboardWindow;
                     dashboardWindow = new DashBoardAdminWindow();
                     dashboardWindow->show();
+
+//                    SecurePasswordPass *newPassUser;
+//                    newPassUser = new SecurePasswordPass();
+//                    newPassUser->show();
+
                     qDebug() << "Logged in as Admin";
                 }
                 else
@@ -102,6 +112,11 @@ void MainWindow::on_pushButton_login_clicked()
                     DashboardWindow *dashboardWindow;
                     dashboardWindow = new DashboardWindow();
                     dashboardWindow->show();
+
+//                    SecurePasswordPass *newPassUser;
+//                    newPassUser = new SecurePasswordPass();
+//                    newPassUser->show();
+
                     qDebug() << "Logged in as User";
                 }
 
@@ -125,3 +140,14 @@ void MainWindow::on_passwordInputBox_returnPressed()
     this->on_pushButton_login_clicked();
     qDebug() << "on_passwordInputBox_returnPressed";
 }
+
+void MainWindow::on_NonUserInterface_Exit_BTN_clicked()
+{
+    this->hide();
+}
+
+int MainWindow::freezeValue()
+{
+    return 0;
+}
+

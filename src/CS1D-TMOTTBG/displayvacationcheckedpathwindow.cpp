@@ -55,7 +55,7 @@ displayVacationCheckedPathWindow::displayVacationCheckedPathWindow(QList<QString
 
 void displayVacationCheckedPathWindow::fileIsReady( QNetworkReply * reply)
 {
-    sortedList.clear();
+    hashedList.clear();
     QString mapURL = "http://maps.googleapis.com/maps/api/staticmap?size=640x640&sensor=false&maptype=hybrid&path=color:0x0000ff80|weight:5|" + startLocationAddress;
     QString returnedXML = reply->readAll();
     QString outputText;
@@ -73,30 +73,32 @@ void displayVacationCheckedPathWindow::fileIsReady( QNetworkReply * reply)
 
     for (int i = 0; i < distanceNode.count(); ++i)
     {
-        sortedList.insert(distanceNode.at(i).toElement().namedItem("distance").childNodes().at(1).toElement().text().replace(",","").split(" ")[0].toDouble(), nameNode.at(i+2).toElement().text());
+        hashedList.insert(distanceNode.at(i).toElement().namedItem("distance").childNodes().at(1).toElement().text().replace(",","").split(" ")[0].toDouble(), nameNode.at(i+2).toElement().text());
     }
 
     QMap<double, QString>::iterator i;
+    // Add Start Location
     mapURL += "|" + startLocationAddress;
-    for (i = sortedList.begin(); i != sortedList.end(); ++i)
+    for (i = hashedList.begin(); i != hashedList.end(); ++i)
     {
          mapURL += "|" + i.value().replace(", ", "+").replace(" ", "+");
     }
+    // Return to start
+    mapURL += "|" + startLocationAddress;
 
     mapURL  += "&markers=color:red%7Clabel+" + startLocationAddress;
-    QMap<double, QString>::iterator j;
-    for (j = sortedList.begin(); j != sortedList.end(); ++j)
+
+    for (i = hashedList.begin(); i != hashedList.end(); ++i)
     {
-        mapURL += "|" + j.value().replace(", ", "+").replace(" ", "+");
+        mapURL += "|" + i.value().replace(", ", "+").replace(" ", "+");
     }
 
-    outputText = "The shortest Path from " + startLocation + " to " + sortedList.end().operator --().value() + ".";
+    outputText = "The shortest Path from " + startLocation + " to " + hashedList.end().operator --().value() + ".";
 
-    QMap<double, QString>::iterator  x;
-    for (x = sortedList.begin(); x != sortedList.end(); ++x)
+    for (i = hashedList.begin(); i != hashedList.end(); ++i)
     {
-        totalDistance += x.key();
-        outputText += "\n" + x.value().replace("+", " ") + " Distance " + QString::number(x.key());
+        totalDistance = i.key() - totalDistance;
+        outputText += "\n" + i.value().replace("+", " ") + " Distance " + QString::number(i.key());
     }
     outputText += "\n\nTotal Distance Traveled: " + QString::number(totalDistance);
     ui->outputLabel->setText(outputText);

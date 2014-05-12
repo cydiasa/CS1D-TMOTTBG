@@ -5,6 +5,7 @@
 #include "createuserwindow.h"
 #include "adminedituserwindow.h"
 #include "displayvacationplannerwindow.h"
+#include "createstadiumwindow.h"
 
 DashBoardAdminWindow::DashBoardAdminWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -54,6 +55,14 @@ void DashBoardAdminWindow::on_editListButton_2_clicked()
 {
     DisplayVacationPlannerWindow *ptr;
     ptr = new DisplayVacationPlannerWindow();
+
+    ptr->show();
+}
+
+void DashBoardAdminWindow::on_createStadiumButton_clicked()
+{
+    CreateStadiumWindow *ptr;
+    ptr = new CreateStadiumWindow();
 
     ptr->show();
 }

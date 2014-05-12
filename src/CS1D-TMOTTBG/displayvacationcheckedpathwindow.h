@@ -37,7 +37,7 @@ private:
     QString startLocationAddress;
     QString startLocation;
     QList<QString> checkedBoxAddress;
-    QMap<double, QString> sortedList;
+    QMap<double, QString> hashedList;
 };
 
 #endif // DISPLAYVACATIONCHECKEDPATHWINDOW_H

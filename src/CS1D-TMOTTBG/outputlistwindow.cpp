@@ -9,10 +9,17 @@
 
 
 OutputListWindow::OutputListWindow(QWidget *parent) :
-    QDialog(parent),
+    QDialog(parent, Qt::FramelessWindowHint),
     ui(new Ui::OutputListWindow)
 {
     ui->setupUi(this);
+
+    ui->tableWidget->setStyleSheet("QHeaderView::section { background-color:#24282e; text-color:white; }");
+
+    int x = 400 ; // whatever
+    int y = 215 ;  // whatever
+
+    move (x, y);
 
     setAttribute(Qt::WA_DeleteOnClose);
     connect(ui->tableWidget, SIGNAL(cellActivated(int,int)), this, SLOT(cellPopup(int)));

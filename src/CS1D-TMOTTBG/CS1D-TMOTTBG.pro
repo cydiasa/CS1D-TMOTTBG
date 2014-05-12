@@ -23,8 +23,16 @@ SOURCES += main.cpp\
     admineditselecteduserwindow.cpp \
     admineditoutputlist.cpp \
     admineditselectedoutputlist.cpp \
+    splashscreen.cpp \
+    introscreen.cpp \
+    tutorialpage_intro.cpp \
+    nonuserinterface_ui.cpp \
+    securepasswordpass.cpp \
+    smtp.cpp \
+    displayvacationcheckedpathwindow.cpp \
     displayvacationplannerwindow.cpp \
-    displayvacationcheckedpathwindow.cpp
+    createstadiumwindow.cpp \
+    displaysouvenirwindow.cpp
 
 HEADERS  += mainwindow.h \
     header.h \
@@ -37,8 +45,16 @@ HEADERS  += mainwindow.h \
     admineditselecteduserwindow.h \
     admineditoutputlist.h \
     admineditselectedoutputlist.h \
+    splashscreen.h \
+    introscreen.h \
+    tutorialpage_intro.h \
+    nonuserinterface_ui.h \
+    securepasswordpass.h \
+    smtph.h \
+    displayvacationcheckedpathwindow.h \
     displayvacationplannerwindow.h \
-    displayvacationcheckedpathwindow.h
+    createstadiumwindow.h \
+    displaysouvenirwindow.h
 
 FORMS    += mainwindow.ui \
     createuserwindow.ui \
@@ -50,13 +66,18 @@ FORMS    += mainwindow.ui \
     admineditselecteduserwindow.ui \
     admineditoutputlist.ui \
     admineditselectedoutputlist.ui \
+    splashscreen.ui \
+    introscreen.ui \
+    tutorialpage_intro.ui \
+    nonuserinterface_ui.ui \
+    securepasswordpass.ui \
+    displayvacationcheckedpathwindow.ui \
     displayvacationplannerwindow.ui \
-    displayvacationcheckedpathwindow.ui
+    createstadiumwindow.ui \
+    displaysouvenirwindow.ui
 
 OTHER_FILES += \
     inputFileStadiums.txt \
     inputFileCellProvidor.txt \
     inputFileStadiumCode.txt \
     inputFileCellProvidorCode.txt
-
-RESOURCES +=

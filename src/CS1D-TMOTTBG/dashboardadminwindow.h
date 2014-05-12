@@ -26,6 +26,8 @@ private slots:
 
     void on_editListButton_2_clicked();
 
+    void on_createStadiumButton_clicked();
+
 private:
     Ui::DashBoardAdminWindow *ui;
 };
