@@ -158,5 +158,5 @@ void CreateUserWindow::on_createButton_clicked()
 
 void CreateUserWindow::on_cancelButton_clicked()
 {
-    this->close();
+    this->hide();
 }

@@ -5,26 +5,13 @@
 #include <QDebug>
 
 AdminEditSelectedOutputList::AdminEditSelectedOutputList(QString id, QWidget *parent) :
-    QMainWindow(parent),
+    QMainWindow(parent, Qt::FramelessWindowHint),
     ui(new Ui::AdminEditSelectedOutputList)
 {
     ui->setupUi(this);
 
     setAttribute(Qt::WA_DeleteOnClose);
     userID = id;
-    // Country list
-//    query.exec("SELECT countryName FROM countryList ORDER BY priority DESC, countryName ASC");
-//    while(query.next())
-//    {
-//        ui->countrySelectionBox->addItem(query.value(0).toString());
-//    }
-
-//    // Cell Providor List
-//    query.exec("SELECT name FROM cellProvider ORDER BY name ASC");
-//    while(query.next())
-//    {
-//        ui->cellProvidorSelectionBox->addItem(query.value(0).toString());
-//    }
 
     query.exec("SELECT `stadiumName`, `stadiumTeamName`, `address`, `phoneNumber`, `dateOpened`, `population`, `americanLeague`, `grass` FROM `stadiums` WHERE id = '" + userID + "' LIMIT 1;");
 
@@ -36,9 +23,6 @@ AdminEditSelectedOutputList::AdminEditSelectedOutputList(QString id, QWidget *pa
         phoneNumber     = query.value(3).toString();
         dateOpened      = query.value(4).toString();
         population      = query.value(5).toString();
-//        americanLeague  = (query.value(6).toBool()?"American League":"National League");
-//        grass           = (query.value(7).toBool()?"Grass":"Astro Turf");
-
 
         ui->stadiumNameEditBox->setText(stadiumName);
         ui->teamNameEditBox->setText(stadiumTeamName);
@@ -46,13 +30,12 @@ AdminEditSelectedOutputList::AdminEditSelectedOutputList(QString id, QWidget *pa
         ui->phoneNumberEditBox->setText(phoneNumber);
         ui->openningDateEditBox->setText(dateOpened);
         ui->seatingCapacityEditBox->setText(population);
-//        ui->leagueTypeComboBox->setCurrentText(americanLeague);
-//        ui->grassTypeComboBox->setCurrentText(grass);
     }
 
+    int x = 580 ; // whatever
+    int y = 250 ; // whatever
 
-
-
+    move (x, y) ;
 }
 
 AdminEditSelectedOutputList::~AdminEditSelectedOutputList()
@@ -62,7 +45,7 @@ AdminEditSelectedOutputList::~AdminEditSelectedOutputList()
 
 void AdminEditSelectedOutputList::on_cancelButton_clicked()
 {
-    this->close();
+    this->hide();
 }
 
 void AdminEditSelectedOutputList::on_resetButton_clicked()
@@ -113,12 +96,13 @@ void AdminEditSelectedOutputList::on_deleteButton_clicked()
 {
     QMessageBox msgBox;
     msgBox.setText("Confirm Deletion from Database, Cannot be undone");
-     QPushButton *connectButton = msgBox.addButton(tr("Confirm Delete"), QMessageBox::ActionRole);
-     QPushButton *abortButton = msgBox.addButton(QMessageBox::Abort);
+    QPushButton *connectButton = msgBox.addButton(tr("Confirm Delete"), QMessageBox::ActionRole);
+    QPushButton *abortButton = msgBox.addButton(QMessageBox::Abort);
 
      msgBox.exec();
 
-     if (msgBox.clickedButton() == connectButton) {
+     if (msgBox.clickedButton() == connectButton)
+     {
          query.prepare("DELETE from `stadiums` WHERE id=" + userID + " LIMIT 1;");
          query.exec();
          this->close();

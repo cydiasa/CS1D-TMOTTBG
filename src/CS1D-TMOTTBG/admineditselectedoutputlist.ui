@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>463</width>
-    <height>353</height>
+    <height>346</height>
    </rect>
   </property>
   <property name="palette">
@@ -283,7 +283,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="resetButton">
+   <widget class="QPushButton" name="cancelButton_2">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -299,7 +299,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="deleteButton">
+   <widget class="QPushButton" name="cancelButton_3">
     <property name="geometry">
      <rect>
       <x>110</x>

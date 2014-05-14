@@ -27,6 +27,8 @@ private slots:
 
     void on_deleteButton_clicked();
 
+    void on_AdminEditSelect_WND_EXIT_BTN_clicked();
+
 private:
     Ui::AdminEditSelectedUserWindow *ui;
     QSqlQuery query;

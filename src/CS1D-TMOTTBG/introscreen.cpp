@@ -26,9 +26,5 @@ void IntroScreen::on_NonUserInterface_buttonEnter_clicked()
 /* External Tutorial BTN CLICK OPEN */
 void IntroScreen::on_ExternalTutorial_button_clicked()
 {
-    TutorialPage_Intro *tutorialpageIntroUIWNDBT;
-    tutorialpageIntroUIWNDBT = new TutorialPage_Intro();
-    tutorialpageIntroUIWNDBT->show();
-
     this->hide();
 }

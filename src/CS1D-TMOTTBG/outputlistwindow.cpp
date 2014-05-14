@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QAbstractItemView>
+#include <QScrollBar>
 
 
 OutputListWindow::OutputListWindow(QWidget *parent) :
@@ -13,15 +14,23 @@ OutputListWindow::OutputListWindow(QWidget *parent) :
     ui(new Ui::OutputListWindow)
 {
     ui->setupUi(this);
+    ui->tableWidget->verticalScrollBar()->setStyleSheet(
+        "QScrollBar:vertical { width: 50px; }");
 
-    ui->tableWidget->setStyleSheet("QHeaderView::section { background-color:#24282e; text-color:white; }");
+    QEventLoop EventLoop (this) ;
+    for (int i = 0 ; i < 10 ; i++)
+      if (!EventLoop.processEvents()) break ;
+
+    hide() ;
+    setAttribute (Qt::WA_DontShowOnScreen, false) ;
+
+    ui->tableWidget->setStyleSheet("QHeaderView::section { background-color:#24282e; color:white; }");
 
     int x = 400 ; // whatever
     int y = 215 ;  // whatever
 
     move (x, y);
 
-    setAttribute(Qt::WA_DeleteOnClose);
     connect(ui->tableWidget, SIGNAL(cellActivated(int,int)), this, SLOT(cellPopup(int)));
 
 

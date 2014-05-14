@@ -18,9 +18,7 @@ DisplayVacationPlannerWindow::DisplayVacationPlannerWindow(QWidget *parent) :
     startingLocation = new QComboBox();
 
     setAttribute(Qt::WA_DeleteOnClose);
-    layout = new QFormLayout;
-    checkBox.clear();
-
+    layout = new QFormLayout();
     query.exec("SELECT `stadiumTeamName`, `stadiumName` FROM `stadiums` ORDER BY stadiumTeamName ASC");
     while(query.next())
     {
@@ -30,11 +28,12 @@ DisplayVacationPlannerWindow::DisplayVacationPlannerWindow(QWidget *parent) :
 
 
     layout->addRow(startingLocation);
-    query.exec("SELECT `stadiumTeamName`, `stadiumName` FROM `stadiums` ORDER BY stadiumTeamName ASC");
+    query.exec("SELECT `stadiumTeamName`, `stadiumName`, `americanLeague` FROM `stadiums` ORDER BY stadiumTeamName ASC");
     while(query.next())
     {
         QString labelText = query.value(0).toString() + ", " + query.value(1).toString();
         checkBox.append(new QCheckBox(labelText));
+        leagueType.append(query.value(2).toBool());
     }
 
     QList<QCheckBox* >::iterator i;
@@ -55,6 +54,36 @@ void DisplayVacationPlannerWindow::on_pushButton_clicked()
     for (int i =0; i < checkBox.count(); i++)
     {
        if(checkBox.at(i)->checkState() > 0)
+       {
+           checkedBoxes.append(checkBox.at(i)->text());
+       }
+    }
+
+    displayVacationCheckedPathWindow *ptr;
+    ptr = new displayVacationCheckedPathWindow(checkedBoxes, startingLocation->currentText());
+    ptr->show();
+}
+
+void DisplayVacationPlannerWindow::on_nationalButton_clicked()
+{
+    for (int i =0; i < checkBox.count(); i++)
+    {
+       if(!leagueType.at(i))
+       {
+           checkedBoxes.append(checkBox.at(i)->text());
+       }
+    }
+
+    displayVacationCheckedPathWindow *ptr;
+    ptr = new displayVacationCheckedPathWindow(checkedBoxes, startingLocation->currentText());
+    ptr->show();
+}
+
+void DisplayVacationPlannerWindow::on_americanOnly_clicked()
+{
+    for (int i =0; i < checkBox.count(); i++)
+    {
+       if(leagueType.at(i))
        {
            checkedBoxes.append(checkBox.at(i)->text());
        }

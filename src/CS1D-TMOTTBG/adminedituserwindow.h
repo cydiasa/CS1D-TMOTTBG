@@ -20,6 +20,8 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_AdminEditUserWindow_EXIT_BTN_clicked();
+
 private:
     Ui::AdminEditUserWindow *ui;
     QSqlQuery query;

@@ -19,7 +19,9 @@ INPUT(
 ./release/displayvacationcheckedpathwindow.o
 ./release/displayvacationplannerwindow.o
 ./release/createstadiumwindow.o
+./release/displayindividualiteminformation.o
 ./release/displaysouvenirwindow.o
+./release/displayusercartitems.o
 ./release/moc_mainwindow.o
 ./release/moc_createuserwindow.o
 ./release/moc_dashboardwindow.o
@@ -39,5 +41,7 @@ INPUT(
 ./release/moc_displayvacationcheckedpathwindow.o
 ./release/moc_displayvacationplannerwindow.o
 ./release/moc_createstadiumwindow.o
+./release/moc_displayindividualiteminformation.o
 ./release/moc_displaysouvenirwindow.o
+./release/moc_displayusercartitems.o
 );

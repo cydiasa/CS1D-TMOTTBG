@@ -32,7 +32,9 @@ SOURCES += main.cpp\
     displayvacationcheckedpathwindow.cpp \
     displayvacationplannerwindow.cpp \
     createstadiumwindow.cpp \
-    displaysouvenirwindow.cpp
+    displayindividualiteminformation.cpp \
+    displaysouvenirwindow.cpp \
+    displayusercartitems.cpp \
 
 HEADERS  += mainwindow.h \
     header.h \
@@ -54,7 +56,9 @@ HEADERS  += mainwindow.h \
     displayvacationcheckedpathwindow.h \
     displayvacationplannerwindow.h \
     createstadiumwindow.h \
-    displaysouvenirwindow.h
+    displayindividualiteminformation.h \
+    displaysouvenirwindow.h \
+    displayusercartitems.h \
 
 FORMS    += mainwindow.ui \
     createuserwindow.ui \
@@ -74,7 +78,9 @@ FORMS    += mainwindow.ui \
     displayvacationcheckedpathwindow.ui \
     displayvacationplannerwindow.ui \
     createstadiumwindow.ui \
-    displaysouvenirwindow.ui
+    displayindividualiteminformation.ui \
+    displaysouvenirwindow.ui \
+    displayusercartitems.ui \
 
 OTHER_FILES += \
     inputFileStadiums.txt \

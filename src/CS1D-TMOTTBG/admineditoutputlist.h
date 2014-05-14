@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QSqlQuery>
+#include "admineditselectedoutputlist.h"
 
 namespace Ui {
 class AdminEditOutputList;
@@ -19,9 +20,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_AdminEditOutputList_EXIT_BTN_clicked();
+
 private:
     Ui::AdminEditOutputList *ui;
     QSqlQuery query;
+    AdminEditSelectedOutputList *ptr;
 
 };
 

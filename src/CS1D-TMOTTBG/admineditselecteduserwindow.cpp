@@ -6,13 +6,13 @@
 #include <QSql>
 
 AdminEditSelectedUserWindow::AdminEditSelectedUserWindow(QString id, QWidget *parent) :
-    QMainWindow(parent),
+    QMainWindow(parent, Qt::FramelessWindowHint),
     ui(new Ui::AdminEditSelectedUserWindow)
 {
     ui->setupUi(this);
 
     setAttribute(Qt::WA_DeleteOnClose);
-userID = id;
+    userID = id;
     // Country list
     query.exec("SELECT countryName FROM countryList ORDER BY priority DESC, countryName ASC");
     while(query.next())
@@ -55,12 +55,10 @@ userID = id;
         ui->cellProvidorSelectionBox->setCurrentText(cellPhoneProvider);
     }
 
+    int x = 580 ; // whatever
+    int y = 400 ; // whatever
 
-
-    //ui->countrySelectionBox->currentText();
-//    ui->cellPhoneInputBox->setText();
-
-    //ui->cellProvidorSelectionBox->currentText();
+    move (x, y) ;
 }
 
 AdminEditSelectedUserWindow::~AdminEditSelectedUserWindow()
@@ -157,7 +155,7 @@ void AdminEditSelectedUserWindow::on_createButton_clicked()
             query.bindValue(":cellPhoneProvider",cellPhoneProvider);
 
             query.exec();
-            this->close();
+            this->hide();
         }
         else
         {
@@ -176,7 +174,7 @@ void AdminEditSelectedUserWindow::on_createButton_clicked()
             query.bindValue(":cellPhone",cellPhoneNumber);
             query.bindValue(":cellPhoneProvider",cellPhoneProvider);
             query.exec();
-            this->close();
+            this->hide();
         }
 
     }
@@ -184,7 +182,7 @@ void AdminEditSelectedUserWindow::on_createButton_clicked()
 
 void AdminEditSelectedUserWindow::on_cancelButton_clicked()
 {
-    this->close();
+//    this->hide();
 }
 
 
@@ -212,6 +210,11 @@ void AdminEditSelectedUserWindow::on_deleteButton_clicked()
      if (msgBox.clickedButton() == connectButton) {
          query.prepare("DELETE from `users` WHERE id=" + userID + " LIMIT 1;");
          query.exec();
-         this->close();
+         this->hide();
      }
+}
+
+void AdminEditSelectedUserWindow::on_AdminEditSelect_WND_EXIT_BTN_clicked()
+{
+    this->hide();
 }

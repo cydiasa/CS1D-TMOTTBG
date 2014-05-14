@@ -6,7 +6,7 @@
 #include <QDebug>
 
 AdminEditUserWindow::AdminEditUserWindow(QWidget *parent) :
-    QMainWindow(parent),
+    QMainWindow(parent, Qt::FramelessWindowHint),
     ui(new Ui::AdminEditUserWindow)
 {
     ui->setupUi(this);
@@ -16,6 +16,11 @@ AdminEditUserWindow::AdminEditUserWindow(QWidget *parent) :
     {
        ui->comboBox->addItem(query.value(0).toString() + " | UserName: " + query.value(1).toString() + " | First Name: " + query.value(2).toString() + " | Last Name: " + query.value(3).toString());
     }
+
+    int x = 580 ; // whatever
+    int y = 250 ; // whatever
+
+    move (x, y) ;
 }
 
 AdminEditUserWindow::~AdminEditUserWindow()
@@ -32,4 +37,9 @@ void AdminEditUserWindow::on_pushButton_clicked()
     ptr = new AdminEditSelectedUserWindow(editID);
     ptr->show();
 
+}
+
+void AdminEditUserWindow::on_AdminEditUserWindow_EXIT_BTN_clicked()
+{
+    this->hide();
 }

@@ -19,7 +19,7 @@
 
 
 DisplayIndividualStadiumInformationWindow::DisplayIndividualStadiumInformationWindow(QString id, QWidget *parent) :
-    QMainWindow(parent),
+    QMainWindow(parent, Qt::FramelessWindowHint),
     ui(new Ui::DisplayIndividualStadiumInformationWindow)
 {
     ui->setupUi(this);
@@ -118,6 +118,11 @@ void DisplayIndividualStadiumInformationWindow::fileIsReady( QNetworkReply * rep
     QDomNodeList distanceNode = row.childNodes();
     QDomNodeList nameNode = root.childNodes();
 
-    ui->distanceBetweenLabel->setText(" is " + distanceNode.at(0).toElement().namedItem("distance").childNodes().at(1).toElement().text().replace(",","").split(" ")[0] + " Miles");
+    ui->IndividualStadium_Distance_LBL->setText(" is " + distanceNode.at(0).toElement().namedItem("distance").childNodes().at(1).toElement().text().replace(",","").split(" ")[0] + " Miles");
 
+}
+
+void DisplayIndividualStadiumInformationWindow::on_IndividualStadium_Exit_BTN_clicked()
+{
+    this->close();
 }

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>399</width>
+    <width>587</width>
     <height>778</height>
    </rect>
   </property>
@@ -16,14 +16,40 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>730</y>
-     <width>75</width>
+     <x>460</x>
+     <y>710</y>
+     <width>101</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
     <string>Plan Trip</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nationalButton">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>650</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>National Only</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="americanOnly">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>680</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>American Only</string>
    </property>
   </widget>
  </widget>

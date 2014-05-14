@@ -3,6 +3,7 @@
 #include "dashboardwindow.h"
 #include "dashboardadminwindow.h"
 #include "securepasswordpass.h"
+#include "nonuserinterface_ui.h"
 
 
 
@@ -27,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    setAttribute(Qt::WA_DeleteOnClose);
+//    setAttribute(Qt::WA_DeleteOnClose);
 
     QEventLoop EventLoop (this) ;
     for (int i = 0 ; i < 10 ; i++)
@@ -48,8 +49,8 @@ MainWindow::MainWindow(QWidget *parent) :
     database.setHostName("h.cydiasolutions.com");
     database.setPort(19996);
     database.setDatabaseName("cs1d");
-    database.setUserName("cs1d");
-    database.setPassword("Cydia7x7");
+    database.setUserName("cs1d-tmottbg");
+    database.setPassword("LtBPlgYjWuywd8vlIZ1yhndZexNpwMDdjiU2o0EEnZhgPxB5FWvHNMCQxnl91Ynj");
 
     // Check to see if were connected to the database
     if(!database.open())
@@ -100,22 +101,16 @@ void MainWindow::on_pushButton_login_clicked()
                     dashboardWindow = new DashBoardAdminWindow();
                     dashboardWindow->show();
 
-//                    SecurePasswordPass *newPassUser;
-//                    newPassUser = new SecurePasswordPass();
-//                    newPassUser->show();
-
+                    this->hide();
                     qDebug() << "Logged in as Admin";
                 }
                 else
                 {
-                    // Switch to dashboard
-                    DashboardWindow *dashboardWindow;
-                    dashboardWindow = new DashboardWindow();
-                    dashboardWindow->show();
+                    SecurePasswordPass *newPassUser;
+                    newPassUser = new SecurePasswordPass();
+                    newPassUser->show();
 
-//                    SecurePasswordPass *newPassUser;
-//                    newPassUser = new SecurePasswordPass();
-//                    newPassUser->show();
+                    this->hide();
 
                     qDebug() << "Logged in as User";
                 }

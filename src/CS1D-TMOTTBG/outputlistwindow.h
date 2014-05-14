@@ -23,6 +23,8 @@ private slots:
 private:
     Ui::OutputListWindow *ui;
     QSqlQuery query;
+    QSqlDatabase database;
+    QSqlQuery queryStatement;
 };
 
 #endif // OUTPUTLISTWINDOW_H

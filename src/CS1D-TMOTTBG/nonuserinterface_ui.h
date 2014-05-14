@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include "mainwindow.h"
+#include "createuserwindow.h"
+#include "outputlistwindow.h"
 
 namespace Ui {
 class NonUserInterface_UI;
@@ -38,9 +40,16 @@ private slots:
 
     void on_NonUserInterface_Register_BTN_clicked();
 
+    void on_NonUserInterface_Exit_BTN_clicked();
+
 private:
     Ui::NonUserInterface_UI *ui;
-        MainWindow *openLoginBox;
+        MainWindow          *openLoginBox;
+        CreateUserWindow    *openRegiBox;
+        OutputListWindow    *displayStadiums;
+
+        QSqlDatabase database;
+        QSqlQuery queryStatement;
 };
 
 #endif // NONUSERINTERFACE_UI_H

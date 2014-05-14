@@ -494,11 +494,29 @@
    <property name="frameShape">
     <enum>QFrame::HLine</enum>
    </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOn</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOn</enum>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustIgnored</enum>
+   </property>
+   <property name="autoScroll">
+    <bool>false</bool>
+   </property>
    <property name="editTriggers">
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
    <property name="showGrid">
-    <bool>false</bool>
+    <bool>true</bool>
+   </property>
+   <property name="gridStyle">
+    <enum>Qt::DotLine</enum>
+   </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
    </property>
    <property name="cornerButtonEnabled">
     <bool>true</bool>

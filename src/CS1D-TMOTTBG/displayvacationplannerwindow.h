@@ -22,12 +22,17 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_nationalButton_clicked();
+
+    void on_americanOnly_clicked();
+
 private:
     QFormLayout *layout;
     QSqlQuery query;
     QComboBox* startingLocation;
     QList<QString> checkedBoxes;
     QList<QCheckBox *> checkBox;
+    QList<bool> leagueType;
     Ui::DisplayVacationPlannerWindow *ui;
 };
 

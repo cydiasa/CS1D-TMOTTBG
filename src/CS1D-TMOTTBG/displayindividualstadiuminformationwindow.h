@@ -26,6 +26,8 @@ private slots:
 
     void fileIsReady(QNetworkReply* reply);
 
+    void on_IndividualStadium_Exit_BTN_clicked();
+
 private:
     Ui::DisplayIndividualStadiumInformationWindow *ui;
     QSqlQuery query;
